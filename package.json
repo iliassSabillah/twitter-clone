@@ -1,0 +1,19 @@
+{
+  "name": "resumy",
+  "version": "1.0.0",
+  "description": "resume app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iliassSabillah/resumy.git"
+  },
+  "author": "iliass",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iliassSabillah/resumy/issues"
+  },
+  "homepage": "https://github.com/iliassSabillah/resumy#readme"
+}
