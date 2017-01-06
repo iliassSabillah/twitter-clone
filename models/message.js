@@ -1,7 +1,7 @@
 "use strict";
 
 module.exports = (sequelize, DataTypes)=> {
-	const Education = sequelize.define("Education", {
+	const Message = sequelize.define("Message", {
 			school: DataTypes.STRING,
 			startYear: DataTypes.INTEGER,
 			endYear: DataTypes.INTEGER,
@@ -13,11 +13,11 @@ module.exports = (sequelize, DataTypes)=> {
 		, {
 			classMethods: {
 				associate: (models)=> {
-					Education.belongsTo(models.User)
+					Message.belongsTo(models.User)
 				}
 			}
 		}
 	);
 
-	return Education;
+	return Message;
 };

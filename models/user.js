@@ -2,24 +2,21 @@
 
 module.exports = (sequelize, DataTypes)=> {
 	const User = sequelize.define("User", {
-		name: DataTypes.STRING,
-		role: DataTypes.STRING,
-		email: DataTypes.STRING,
-		phone: DataTypes.STRING,
-		address: DataTypes.STRING,
+		username: DataTypes.STRING,
 		password: DataTypes.STRING,
-		linkedIn: DataTypes.STRING,
-		github: DataTypes.STRING,
-		portfolio: DataTypes.STRING,
-		twitter: DataTypes.STRING
+		email: DataTypes.STRING,
+		location: DataTypes.STRING,
+		profilePhoto: DataTypes.STRING,
+		headerPhoto: DataTypes.STRING,
+		website: DataTypes.STRING,
+		birthday: DataTypes.DATE,
+		bio: DataTypes.TEXT
 
 	}, {
 		classMethods: {
 			associate: (models)=> {
-				User.hasMany(models.Experience);
-				User.hasMany(models.Education);
-				User.hasMany(models.Project);
-				User.hasMany(models.Skill);
+				User.hasMany(models.Tweet);
+				User.hasMany(models.Message);
 			}
 		}
 	}

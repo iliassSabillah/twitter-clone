@@ -1,10 +1,9 @@
 //This component handles the Home template
 import React, {PropTypes} from 'react';
-import ResumePage from '../resumePage/ResumePage';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import * as infoActions from '../../actions/infoActions';
-import * as experienceActions from '../../actions/experienceActions';
+import * as userActions from '../../actions/userActions';
+import * as messageActions from '../../actions/messageActions';
 
 
 class HomePage extends React.Component {
@@ -13,24 +12,20 @@ class HomePage extends React.Component {
 		return (
 			<div className="container-fluid">
 				{this.props.children}
-				<ResumePage info={this.props.state.info} experience={this.props.state.experience}/>
 			</div>
 		);
 	}
 }
 
 HomePage.propTypes = {
-	children : PropTypes.object.isRequired,
-	state: React.PropTypes.oneOfType([
-		React.PropTypes.array,
-		React.PropTypes.object
-	])
+	children : PropTypes.object,
+	state: React.PropTypes.object,
 };
 
 const mapStateToProps= (state,ownProps)=>({state: state});
 
 const mapDispatchToProps=(dispatch)=>({
-	actions: bindActionCreators({infoActions, experienceActions}, dispatch)
+	actions: bindActionCreators({userActions, messageActions}, dispatch)
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

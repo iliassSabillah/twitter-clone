@@ -1,7 +1,7 @@
 {
-  "name": "resumy",
+  "name": "twitter",
   "version": "1.0.0",
-  "description": "resume app",
+  "description": "twitter clone app",
   "scripts": {
     "prestart": "babel-node tools/startMessage.js",
     "start": "npm-run-all --parallel test:watch open:src lint:watch",
@@ -85,12 +85,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/iliassSabillah/resumy.git"
+    "url": "git+https://github.com/iliassSabillah/twitter-MVP.git"
   },
   "author": "iliass",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/iliassSabillah/resumy/issues"
+    "url": "https://github.com/iliassSabillah/twitter-MVP/issues"
   },
-  "homepage": "https://github.com/iliassSabillah/resumy#readme"
+  "homepage": "https://github.com/iliassSabillah/twitter-MVP#readme"
 }

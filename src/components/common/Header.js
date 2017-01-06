@@ -20,7 +20,7 @@ const Header = (props)=> {
 							<span className="icon-bar"/>
 							<span className="icon-bar"/>
 						</button>
-						<a className="navbar-brand" href="#">Resumy</a>
+						<a className="navbar-brand" href="#">Twitter-MVP</a>
 					</div>
 
 					<div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -47,11 +47,9 @@ const Header = (props)=> {
 			</nav>
 			<div className="sectionNav">
 				<ul className="nav nav-pills center">
-					<li><IndexLink to="/">Info</IndexLink></li>
-					<li><Link to="experience">Experience</Link></li>
-					<li><Link to="education">Education</Link></li>
-					<li><Link to="projects">Projects</Link></li>
-					<li><Link to="skills">Skills</Link></li>
+					<li><IndexLink to="/">Home</IndexLink></li>
+					<li><Link to="profile">Profile</Link></li>
+					<li><Link to="tweet">Tweet</Link></li>
 				</ul>
 			</div>
 		</div>

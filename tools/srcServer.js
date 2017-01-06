@@ -10,7 +10,7 @@ const session = require('express-session');
 
 /* eslint-disable no-console */
 
-const port = 5000;
+const port = 2020;
 const app = express();
 const compiler = webpack(config);
 
@@ -51,10 +51,8 @@ app.use(session({
 }))
 
 app.use('/api/users', require('../apiRoutes/index').userRouter);
-app.use('/api/experience', require('../apiRoutes/index').experienceRouter);
-// app.use('/api/education', require('../apiRoutes/index').educationRouter);
-// app.use('/api/skills', require('../apiRoutes/index').skillsRouter);
-// app.use('/api/projects', require('../apiRoutes/index').projectsRouter);
+app.use('/api/tweet', require('../apiRoutes/index').tweetRouter);
+
 
 app.get('/*', (req, res)=> {
 	res.sendFile(path.join( __dirname, '../src/index.html'));

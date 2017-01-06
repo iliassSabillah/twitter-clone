@@ -9,9 +9,9 @@ import configureStore from './store/configureStore';
 
 import './styles/styles.css'; //Webpack can import CSS files too
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import {fetchUser} from './actions/infoActions';
-import {fetchExperience} from './actions/experienceActions';
-// import {fetchEducation} from './actions/educationActions';
+import {fetchUser} from './actions/userActions';
+// import {fetchTweet} from './actions/tweetActions';
+
 
 
 const store = configureStore();
@@ -21,7 +21,6 @@ const store = configureStore();
 const history = syncHistoryWithStore(browserHistory, store);
 
 
-debugger;
 
 render (
 	<Provider store={store}>
@@ -30,11 +29,9 @@ render (
 	document.getElementById('root')
 );
 
-debugger;
-
-store.dispatch(fetchUser());
-
-debugger;
-store.dispatch(fetchExperience());
+//
+// store.dispatch(fetchUser());
+//
+// store.dispatch(fetchTweet());
 // store.dispatch(fetchEducation());
 

@@ -1,10 +1,10 @@
-//Info actions creator
+//User actions creator
 import * as types from './actionTypes';
 import axios from 'axios';
 
 
-export function createInfo(info){
-	return {type: types.CREATE_INFO,info};
+export function createUser(user){
+	return {type: types.CREATE_USER,user};
 }
 
 
@@ -13,7 +13,7 @@ export function fetchUser() {
 
 	return (dispatch)=>{
 		request.then(({data})=>{
-			dispatch({type: types.FETCH_USER, info: data});
+			dispatch({type: types.FETCH_USER, user: data});
 		});
 	};
 
@@ -24,7 +24,7 @@ export function fetchUser() {
 //
 // 	return (dispatch)=>{
 // 		request.then(({data})=>{
-// 			dispatch({type: types.UPDATE_USER, info: data});
+// 			dispatch({type: types.UPDATE_USER, user: data});
 // 		});
 // 	};
 //

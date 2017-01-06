@@ -6,7 +6,7 @@ const models = require('../models');
 models.User.sync({force: true})
 //add the following user to the database:
 	.then(() => models.User.bulkCreate([
-		{name: 'ILIASS SABILLAH', role:  'Web Developer',email: 'iliass@gmail.com',phone:'3475136470',address:'123 main st',password:'pass',linkedIn:'linkedIn.com',github:'github.com',portfolio:'portfolio.com',twitter:'twitter.com'}
+		{username: 'iliass', password:  'pass',email: 'iliass@gmail.com',profilePhoto:'',headerPhoto:'',website:'hello.com',birthday:'20-12-2012',location:'NY',bio:'hello'}
 
 	]))
 	//the following users should NOT be added to your database:

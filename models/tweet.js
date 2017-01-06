@@ -1,17 +1,19 @@
 "use strict";
 
 module.exports = (sequelize, DataTypes)=> {
-	const Skill = sequelize.define("Skill", {
-			skill: DataTypes.STRING
+	const Tweet = sequelize.define("Tweet", {
+			tweet: DataTypes.STRING,
+
+
 		}
 		, {
 			classMethods: {
 				associate: (models)=> {
-					Skill.belongsTo(models.User)
+					Tweet.belongsTo(models.User)
 				}
 			}
 		}
 	);
 
-	return Skill;
+	return Tweet;
 };

@@ -1,23 +1,20 @@
 import configureStore from '../store/configureStore';
-import {fetchExperience} from '../actions/experienceActions';
-import {fetchUser} from '../actions/infoActions';
-import {fetchEducation} from '../actions/educationActions';
+import {fetchTweet} from '../actions/tweetActions';
+import {fetchUser} from '../actions/userActions';
+import {fetchMessage} from '../actions/messageActions';
 
-debugger;
 
 let store = configureStore();
 
-debugger;
 export  function onUsersEnter() {
 	store.dispatch(fetchUser());
 }
 
-debugger;
 
-export  function onExperienceEnter() {
-	store.dispatch(fetchExperience());
-}
-
-export  function onEducationEnter() {
-	store.dispatch(fetchEducation());
-}
+// export  function onTweetEnter() {
+// 	store.dispatch(fetchTweet());
+// }
+//
+// export  function onMessageEnter() {
+// 	store.dispatch(fetchMessage());
+// }

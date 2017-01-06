@@ -1,20 +1,16 @@
 import {combineReducers} from 'redux';
-import info from './infoReducer';
-import experience from './experienceReducer';
-import education from './educationReducer';
-import project from './projectReducer';
-import skill from './skillReducer';
-
-
+import user from './userReducer';
+import tweet from './tweetReducer';
+import message from './messageReducer';
 import { routerReducer } from 'react-router-redux';
 
 const rootReducer = combineReducers({
-	info,
+	user,
 	routing: routerReducer,
-	experience,
-	education,
-	project,
-	skill
+	tweet,
+	message
+
 });
 
 export default rootReducer;
+

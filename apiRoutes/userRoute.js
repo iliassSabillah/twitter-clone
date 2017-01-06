@@ -20,16 +20,11 @@ const getUser = (req,res)=>{
 // POST (create) a new user
 const postUser = (req,res)=>{
 	models.User.create({
-		name: req.body.name,
-		role: req.body.role,
-		email: req.body.email,
-		phone: req.body.phone,
+		username: req.body.name,
 		address: req.body.address,
+		email: req.body.email,
 		password: req.body.password,
-		linkedIn: req.body.linkedIn,
-		github: req.body.github,
-		portfolio: req.body.portfolio,
-		twitter: req.body.twitter
+
 	}).then(newUser=> { res.send(newUser)})
 };
 
