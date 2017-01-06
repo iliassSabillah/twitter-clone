@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "c4q-ac26",
+    "password": null,
+    "database": "twitter-db",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "c4q-ac26",
+    "password": null,
+    "database": "twitter-db",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "c4q-ac26",
+    "password": null,
+    "database": "twitter-db",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}
