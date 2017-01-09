@@ -1,9 +1,8 @@
-
-
 //This component handles the header navbar component
 import React ,{PropTypes} from 'react';
 import {Link, IndexLink} from 'react-router';
 import $ from 'jquery';
+import SignIn from '../signIn/SignIn';
 
 const Header = (props)=> {
 	$(()=> {
@@ -38,7 +37,7 @@ const Header = (props)=> {
 								</div>
 								<ul className="nav navbar-nav navbar-right">
 									<li><button className="btn btn-outline-primary" href="#">Sign Up</button></li>
-									<li><input className="btn btn-outline-primary" type="submit" value="Sign In"/></li>
+									<Link to="/signin"><li><input className="btn btn-outline-primary" type="submit" value="Sign In"/></li></Link>
 								</ul>
 							</form>
 						</ul>

@@ -2,7 +2,7 @@ const signinRouter = require('express').Router();
 
 const signinUser = (req,res)=>{
 	const userInfo = req.body;
-	User.sync()
+	models.User.sync()
 		.then(()=>{
 			return User.findOne({where:{
 				email: userInfo.email

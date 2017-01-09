@@ -11,10 +11,10 @@ export  function onUsersEnter() {
 }
 
 
-// export  function onTweetEnter() {
-// 	store.dispatch(fetchTweet());
-// }
-//
+export  function onTweetsEnter() {
+	store.dispatch(fetchTweet());
+}
+
 // export  function onMessageEnter() {
 // 	store.dispatch(fetchMessage());
 // }

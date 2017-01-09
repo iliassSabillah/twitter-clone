@@ -16,8 +16,8 @@ export default function tweetReducer(state= INITIAL_STATE, action){
 		// 	return	{...state, ...newEducation};
 		// case UPDATE_TWEET:
 		// 	return	{...state, [action.tweet.id]: action.tweet};
-		// case DELETE_TWEET:
-		// 	return	_.omit(state, action.tweet.id);
+		case DELETE_TWEET:
+			return	_.omit(state, action.tweet.id);
 		default:
 			return state;
 

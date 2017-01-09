@@ -8,11 +8,13 @@ class User extends React.Component{
 		return (
 			<div id="user" className="contact-form col-md-3">
 				<h2>User</h2>
-				<label>Username</label>
-				{/*<input ref ="username" defaultValue={this.props.user.username} onChange={this.props.handleChange}/>*/}
-				{/*<label>email</label>*/}
-				{/*<input ref ="email" defaultValue={this.props.user.email} onChange={this.props.handleChange}/>*/}
-				{/*<input type="submit" value="Submit"/>*/}
+				<form onSubmit={this.props.handleSubmit}>
+					<label>Username</label>
+					<input ref ="username" defaultValue={this.props.user.username} onChange={this.props.handleChange}/>
+					<label>email</label>
+					<input ref ="email" defaultValue={this.props.user.email} onChange={this.props.handleChange}/>
+					<input type="submit" value="Submit"/>
+				</form>
 			</div>
 		);
 	}

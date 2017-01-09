@@ -9,6 +9,7 @@ import User from './User';
 import onUsersEnter from '../../routes/route_data';
 
 
+
 class UserContainer extends React.Component{
 	constructor(props, context){
 		super(props, context);
@@ -21,9 +22,6 @@ class UserContainer extends React.Component{
 			}
 		};
 		this.userRow= this.userRow.bind(this);
-
-
-
 	}
 
 	// handleInput(e,inputField){
@@ -34,9 +32,12 @@ class UserContainer extends React.Component{
 	// }
 	handleSubmit(e) {
 		e.preventDefault();
+		let userId = 1;
 		let username = this.refs.username;
 		let email = this.refs.email;
-		this.props.actions.createUser(user);
+		this.setState({id: userId});
+		this.props.actions.fetchUser(this.state.user);
+		// this.props.actions.createUser(user);
 
 	}
 	handleChange(e,inputField) {
@@ -58,7 +59,7 @@ class UserContainer extends React.Component{
 UserContainer.propTypes = {
 	actions : PropTypes.object.isRequired,
 	user: React.PropTypes.object,
-	fetchUsers: PropTypes.func
+	fetchUser: PropTypes.func
 };
 
 const mapStateToProps= (state,ownProps)=>({user: state.user});
