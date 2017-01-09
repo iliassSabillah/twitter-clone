@@ -1,38 +1,38 @@
 0 info it worked if it ends with ok
 1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'start' ]
-2 info using npm@3.10.10
-3 info using node@v7.3.0
+2 info using npm@4.0.5
+3 info using node@v6.9.1
 4 verbose run-script [ 'prestart', 'start', 'poststart' ]
 5 info lifecycle twitter@1.0.0~prestart: twitter@1.0.0
 6 verbose lifecycle twitter@1.0.0~prestart: unsafe-perm in lifecycle true
-7 verbose lifecycle twitter@1.0.0~prestart: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/c4q-ac26/Desktop/twitter-MVP/node_modules/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
-8 verbose lifecycle twitter@1.0.0~prestart: CWD: /Users/c4q-ac26/Desktop/twitter-MVP
+7 verbose lifecycle twitter@1.0.0~prestart: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/Rabiya/Desktop/twitter-clone/node_modules/.bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+8 verbose lifecycle twitter@1.0.0~prestart: CWD: /Users/Rabiya/Desktop/twitter-clone
 9 silly lifecycle twitter@1.0.0~prestart: Args: [ '-c', 'babel-node tools/startMessage.js' ]
 10 silly lifecycle twitter@1.0.0~prestart: Returned: code: 0  signal: null
 11 info lifecycle twitter@1.0.0~start: twitter@1.0.0
 12 verbose lifecycle twitter@1.0.0~start: unsafe-perm in lifecycle true
-13 verbose lifecycle twitter@1.0.0~start: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/c4q-ac26/Desktop/twitter-MVP/node_modules/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
-14 verbose lifecycle twitter@1.0.0~start: CWD: /Users/c4q-ac26/Desktop/twitter-MVP
+13 verbose lifecycle twitter@1.0.0~start: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/Rabiya/Desktop/twitter-clone/node_modules/.bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+14 verbose lifecycle twitter@1.0.0~start: CWD: /Users/Rabiya/Desktop/twitter-clone
 15 silly lifecycle twitter@1.0.0~start: Args: [ '-c',
 15 silly lifecycle   'npm-run-all --parallel test:watch open:src lint:watch' ]
 16 silly lifecycle twitter@1.0.0~start: Returned: code: 1  signal: null
 17 info lifecycle twitter@1.0.0~start: Failed to exec start script
 18 verbose stack Error: twitter@1.0.0 start: `npm-run-all --parallel test:watch open:src lint:watch`
 18 verbose stack Exit status 1
-18 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:255:16)
+18 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:279:16)
 18 verbose stack     at emitTwo (events.js:106:13)
 18 verbose stack     at EventEmitter.emit (events.js:191:7)
 18 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/spawn.js:40:14)
 18 verbose stack     at emitTwo (events.js:106:13)
 18 verbose stack     at ChildProcess.emit (events.js:191:7)
-18 verbose stack     at maybeClose (internal/child_process.js:885:16)
+18 verbose stack     at maybeClose (internal/child_process.js:877:16)
 18 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:226:5)
 19 verbose pkgid twitter@1.0.0
-20 verbose cwd /Users/c4q-ac26/Desktop/twitter-MVP
-21 error Darwin 14.5.0
+20 verbose cwd /Users/Rabiya/Desktop/twitter-clone
+21 error Darwin 16.3.0
 22 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "start"
-23 error node v7.3.0
-24 error npm  v3.10.10
+23 error node v6.9.1
+24 error npm  v4.0.5
 25 error code ELIFECYCLE
 26 error twitter@1.0.0 start: `npm-run-all --parallel test:watch open:src lint:watch`
 26 error Exit status 1
