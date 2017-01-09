@@ -36,6 +36,7 @@ class UserContainer extends React.Component{
 		e.preventDefault();
 		let username = this.refs.username;
 		let email = this.refs.email;
+		let user = {username, email};
 		this.props.actions.createUser(user);
 
 	}
@@ -48,7 +49,7 @@ class UserContainer extends React.Component{
 	}
 	userRow(user,index){return (<li key={user+index}>{user}</li>);}
 	render(){
-		console.log('state inside user container:',this.props.user);
+		// console.log('state inside user container:',this.props.user);
 		return (
 				<User handleChange={this.handleChange} user={this.props.user} handleSubmit={this.handleSubmit} userRow={this.userRow}/>
 		);
@@ -68,4 +69,3 @@ const mapDispatchToProps=(dispatch)=>({
 	});
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserContainer);
-

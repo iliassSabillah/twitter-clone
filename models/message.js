@@ -2,12 +2,8 @@
 
 module.exports = (sequelize, DataTypes)=> {
 	const Message = sequelize.define("Message", {
-			school: DataTypes.STRING,
-			startYear: DataTypes.INTEGER,
-			endYear: DataTypes.INTEGER,
-			current: DataTypes.BOOLEAN,
-			gpa: DataTypes.STRING,
-			achievements: DataTypes.STRING
+			tweet: DataTypes.STRING,
+
 
 		}
 		, {
