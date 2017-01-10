@@ -1,10 +1,10 @@
 const express = require('express');
-const signinRouter = express.Router();
+const loginRouter = express.Router();
 const session = require('express-session');
 
 const User = require('../models/user');
 
-const signinUser = (req,res)=>{
+const loginUser = (req,res)=>{
 	const userLogin = ((req, res) => {
 		console.log('Session:', req.session);
 		let userInfo = req.body;
@@ -19,12 +19,12 @@ const signinUser = (req,res)=>{
 		.then((user) => {
 			if (user && user.password === userInfo.password) {
 				console.log('Password is correct')
-				return user
+				return { success: true, user: user }
 			} else if (!user) {
 				console.log('Create New User')
-				return User.create(userInfo)
+				return { success: true, user: User.create(userInfo) }
 			} else {
-				return null
+				return { success: false }
 			}
 		})
 		.then((user) => {
@@ -33,7 +33,7 @@ const signinUser = (req,res)=>{
 				req.session.save();
 				console.log('Updated Session:', req.session)
 				res.send(user)
-			} else if {
+			} else if (!user.password === userInfo.password)){
 				res.send('incorrect password')
 			} else (!user){
 				console.log('user does not exist and creating new one');
@@ -42,8 +42,8 @@ const signinUser = (req,res)=>{
 		})
 };
 
-signinRouter.route('/signin')
-	.post(signinUser);
+loginRouter.route('/login')
+	.get(userLogin);
 
 
-module.exports = signinRouter;
+module.exports = loginRouter;
