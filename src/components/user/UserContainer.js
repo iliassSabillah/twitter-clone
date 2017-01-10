@@ -4,9 +4,11 @@ import 'jquery-ui';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as userActions from '../../actions/userActions';
-import $ from 'jquery';
+import * as followerActions from '../../actions/followerActions';
+const debug  = require('debug')('follower');
+// import $ from 'jquery';
 import User from './User';
-import onUsersEnter from '../../routes/route_data';
+// import onUsersEnter from '../../routes/route_data';
 
 
 class UserContainer extends React.Component{
@@ -17,55 +19,51 @@ class UserContainer extends React.Component{
 				id: '',
 				username: '',
 				email: '',
-				password:''
+				password:'',
+				followers: {
+					followedId : 1,
+					followerId : ''
+				}
 			}
 		};
 		this.userRow= this.userRow.bind(this);
-
-
-
+		this.handleFollow = this.handleFollow.bind(this);
 	}
-
 	// handleInput(e,inputField){
 	// 	// const user = this.state.user;
 	// 	user[inputField] = e.target.value;
 	// 	this.userRow();
 	// 	this.props.actions.createUser(user);
 	// }
-	handleSubmit(e) {
-		e.preventDefault();
-		let username = this.refs.username;
-		let email = this.refs.email;
-		let user = {username, email};
-		this.props.actions.createUser(user);
-
-	}
-	handleChange(e,inputField) {
-		const user = this.state.user;
-		user[inputField] = e.target.value;
-	}
-	addLink(){
-		$('.link').toggleClass('hidden');
+	handleFollow(e) {
+		let userId = 1;
+		console.log(e.target.value);
+		let follower = {followerId : e.target.value};
+		debug("%O");
+		let followers = Object.assign({}, this.state.user.followers, follower);
+		this.props.actions.createFollower(followers);
+		debug("%O");
 	}
 	userRow(user,index){return (<li key={user+index}>{user}</li>);}
 	render(){
-		// console.log('state inside user container:',this.props.user);
+		console.log('state inside user container:',this.props.user);
 		return (
-				<User handleChange={this.handleChange} user={this.props.user} handleSubmit={this.handleSubmit} userRow={this.userRow}/>
+				<User follow={this.handleFollow} user={this.props.user} handleSubmit={this.handleSubmit} userRow={this.userRow}/>
 		);
 	}
 }
 
 UserContainer.propTypes = {
 	actions : PropTypes.object.isRequired,
-	user: React.PropTypes.object,
-	fetchUsers: PropTypes.func
+	user: PropTypes.object,
+	fetchUser: PropTypes.func,
+	createFollower: PropTypes.func
 };
 
 const mapStateToProps= (state,ownProps)=>({user: state.user});
 
 const mapDispatchToProps=(dispatch)=>({
-		actions: bindActionCreators(userActions, dispatch)
+		actions: bindActionCreators({ userActions , followerActions}, dispatch)
 	});
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserContainer);

@@ -55,6 +55,8 @@ app.use('/api/users', require('../apiRoutes/index').userRouter);
 app.use('/api/tweet', require('../apiRoutes/index').tweetRouter);
 app.use('/api/message', require('../apiRoutes/index').messageRouter);
 app.use('/api/login', require('../apiRoutes/index').loginRouter);
+app.use('/api/followers', require('./routes/index').followerRouter);
+
 
 
 app.get('/*', (req, res)=> {

@@ -5,11 +5,10 @@ const models = require('../models');
 //Tweet.sync will create the tweet table
 models.Tweet.sync({force: true})
 //add the following tweet to the database:
-	.then(() => models.Tweet.bulkCreate([
-		{tweet: 'bla bla'}
-
-	]))
+	.then(() => models.Tweet.bulkCreate([{tweet: 'bla bla'}]))
+	.then((tweet=> tweet.addUser(1)))
 	//the following tweet should NOT be added to your database:
+
 	//(if your validations are setup correctly)
 	// .then(() => Tweet.bulkCreate([
 	// 	{tweet: ''},

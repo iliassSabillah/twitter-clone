@@ -4,10 +4,10 @@ const session = require('express-session');
 
 const User = require('../models/user');
 
-const userLogin = (req,res)=>{
-		console.log('Session:', req.session);
-		let userInfo = req.body;
-		User.sync()
+const userLogin = (req,res)=> {
+	console.log('Session:', req.session);
+	let userInfo = req.body;
+	User.sync()
 		.then(() => {
 			return User.findOne({
 				where: {
@@ -17,30 +17,31 @@ const userLogin = (req,res)=>{
 		})
 		.then((user) => {
 			if (user && user.password === userInfo.password) {
-				console.log('Password is correct');
-				return { success: true, user: user }
+				console.log('Password is correct')
+				return {success: true, user: user}
 			} else if (!user) {
 				console.log('Create New User');
-				return { success: true, user: User.create(userInfo) }
+				return {success: true, user: User.create(userInfo)}
 			} else {
-				return { success: false }
+				return {success: false}
 			}
 		})
 		.then((user) => {
 			if (user) {
 				req.session.username = user.username;
 				req.session.save();
-				console.log('Updated Session:', req.session)
+				console.log('Updated Session:', req.session);
 				res.send(user)
 			}
-			else if (!user.password === userInfo.password){
+			else if (!user.password === userInfo.password) {
 				res.send('incorrect password')
-			} else if (!user){
+			}
+			else if (!user) {
 				console.log('user does not exist and creating new one');
 				return User.create(userInfo)
 			}
 		})
-};
+	};
 
 loginRouter.route('/login')
 	.get(userLogin);

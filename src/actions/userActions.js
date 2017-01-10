@@ -9,7 +9,7 @@ export function createUser(user){
 
 
 export function fetchUser() {
-	const request = axios.get('/api/users');
+	const request = axios.get('/api/users/1');
 
 	return (dispatch)=>{
 		request.then(({data})=>{
@@ -19,13 +19,16 @@ export function fetchUser() {
 
 }
 
-// export function postUser() {
-// 	const request = axios.put('/api/users/:name');
-//
-// 	return (dispatch)=>{
-// 		request.then(({data})=>{
-// 			dispatch({type: types.UPDATE_USER, user: data});
-// 		});
-// 	};
-//
-// }
+export function postUser() {
+	const request = axios.put('/api/users/1');
+
+	return (dispatch)=>{
+		request.then(({data})=>{
+			dispatch({type: types.UPDATE_USER, user: data});
+		});
+	};
+}
+
+
+
+

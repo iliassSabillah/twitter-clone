@@ -7,3 +7,5 @@ export const CREATE_MESSAGE = 'CREATE_MESSAGE';
 export const FETCH_MESSAGE = 'FETCH_MESSAGE';
 export const DELETE_MESSAGE = 'DELETE_MESSAGE';
 export const LOG_IN = 'LOG_IN';
+export const CREATE_FOLLOWER = 'CREATE_FOLLOWER';
+
