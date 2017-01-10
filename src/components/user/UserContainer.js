@@ -11,7 +11,6 @@ import User from './User';
 // import onUsersEnter from '../../routes/route_data';
 
 
-
 class UserContainer extends React.Component{
 	constructor(props, context){
 		super(props, context);

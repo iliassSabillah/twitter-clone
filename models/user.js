@@ -1,4 +1,5 @@
 "use strict";
+import bcrypt from 'bcryptjs';
 
 module.exports = (sequelize, DataTypes)=> {
 	const User = sequelize.define("User", {
@@ -66,6 +67,11 @@ module.exports = (sequelize, DataTypes)=> {
 			},
 
 	}, {
+		hooks:{
+			afterValidate: user => user.password = bcrypt.hashSync(user.password,8)
+		}
+	},
+		{
 		classMethods: {
 			associate: (models)=> {
 				User.hasMany(models.Tweet);
