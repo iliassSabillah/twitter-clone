@@ -6,3 +6,5 @@ export const CREATE_MESSAGE = 'CREATE_MESSAGE';
 export const FETCH_TWEET = 'FETCH_TWEET';
 export const FETCH_MESSAGE = 'FETCH_MESSAGE';
 export const DELETE_MESSAGE = 'DELETE_MESSAGE';
+export const CREATE_FOLLOWER = 'CREATE_FOLLOWER';
+

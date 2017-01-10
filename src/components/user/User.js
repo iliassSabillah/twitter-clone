@@ -8,11 +8,10 @@ class User extends React.Component{
 		return (
 			<div id="user" className="contact-form col-md-3">
 				<h2>User</h2>
-				<label>Username</label>
-				{/*<input ref ="username" defaultValue={this.props.user.username} onChange={this.props.handleChange}/>*/}
-				{/*<label>email</label>*/}
-				{/*<input ref ="email" defaultValue={this.props.user.email} onChange={this.props.handleChange}/>*/}
-				{/*<input type="submit" value="Submit"/>*/}
+				<form onSubmit={this.props.handleSubmit}>
+					<label>Follow me! --> </label>
+					<input onClick={this.props.follow} className="btn btn-primary" type="button" value='2'/>
+				</form>
 			</div>
 		);
 	}
@@ -22,7 +21,8 @@ User.propTypes = {
 	userRow: PropTypes.func,
 	handleChange : PropTypes.func,
 	user: React.PropTypes.object,
-	handleSubmit: PropTypes.func
+	handleSubmit: PropTypes.func,
+	follow: PropTypes.func
 };
 
 export default User;

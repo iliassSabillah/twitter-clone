@@ -2,9 +2,7 @@
 
 module.exports = (sequelize, DataTypes)=> {
 	const Tweet = sequelize.define("Tweet", {
-			tweet: DataTypes.STRING,
-
-
+			tweet: DataTypes.STRING
 		}
 		, {
 			classMethods: {
