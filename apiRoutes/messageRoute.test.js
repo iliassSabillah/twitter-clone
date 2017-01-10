@@ -1,9 +1,9 @@
 import expect from 'expect';
 
-let userRouteTest = describe('UserRouteTest', () => {
+let messageRouteTest = describe('MessageRouteTest', () => {
 	it('should pass', () => {
 		expect(true).toEqual(true);
 	});
 });
 
-export default userRouteTest;
+export default messageRouteTest;

@@ -15,6 +15,8 @@ export  function onTweetsEnter() {
 	store.dispatch(fetchTweet());
 }
 
+
+
 // export  function onMessageEnter() {
 // 	store.dispatch(fetchMessage());
 // }
