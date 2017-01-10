@@ -27,9 +27,8 @@ class UserContainer extends React.Component{
 			}
 		};
 		this.userRow= this.userRow.bind(this);
-		this.follow = this.follow.bind(this);
+		this.handleFollow = this.handleFollow.bind(this);
 	}
-
 	// handleInput(e,inputField){
 	// 	// const user = this.state.user;
 	// 	user[inputField] = e.target.value;
