@@ -8,9 +8,7 @@ models.User.sync({force: true})
 	.then(() => models.User.bulkCreate([
 		{username: 'iliass', password:  'pass',email: 'iliass@gmail.com',profilePhoto:'',headerPhoto:'',website:'iliass.com',birthday:'20-12-2012',location:'NY',bio:'what\'sup'},
 		{username: 'hello', password:  'pass',email: 'hello@gmail.com',profilePhoto:'',headerPhoto:'',website:'hello.com',birthday:'20-12-2010',location:'NY',bio:'hello'}
-
-
-	],{include: [models.User]}))
+	]))
 	//the following users should NOT be added to your database:
 	//(if your validations are setup correctly)
 	// .then(() => User.bulkCreate([

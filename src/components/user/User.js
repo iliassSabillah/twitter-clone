@@ -17,7 +17,6 @@ class User extends React.Component{
 					<input type="button"className="btn" value="Cancel"/>
 					<input onClick={this.props.saveInfo} className="btn btn-primary" type="button" value='Save Changes'/>
 
-
 					<label>Follow me! --> </label>
 					<input onClick={this.props.follow} className="btn btn-primary" type="button" value='2'/>
 				</form>
