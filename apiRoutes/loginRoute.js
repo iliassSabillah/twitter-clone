@@ -4,8 +4,7 @@ const session = require('express-session');
 
 const User = require('../models/user');
 
-const loginUser = (req,res)=>{
-	const userLogin = ((req, res) => {
+const userLogin = (req,res)=>{
 		console.log('Session:', req.session);
 		let userInfo = req.body;
 		User.sync()
@@ -18,10 +17,10 @@ const loginUser = (req,res)=>{
 		})
 		.then((user) => {
 			if (user && user.password === userInfo.password) {
-				console.log('Password is correct')
+				console.log('Password is correct');
 				return { success: true, user: user }
 			} else if (!user) {
-				console.log('Create New User')
+				console.log('Create New User');
 				return { success: true, user: User.create(userInfo) }
 			} else {
 				return { success: false }
@@ -33,9 +32,10 @@ const loginUser = (req,res)=>{
 				req.session.save();
 				console.log('Updated Session:', req.session)
 				res.send(user)
-			} else if (!user.password === userInfo.password)){
+			}
+			else if (!user.password === userInfo.password){
 				res.send('incorrect password')
-			} else (!user){
+			} else if (!user){
 				console.log('user does not exist and creating new one');
 				return User.create(userInfo)
 			}
