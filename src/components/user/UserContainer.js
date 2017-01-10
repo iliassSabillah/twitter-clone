@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as userActions from '../../actions/userActions';
 import * as followerActions from '../../actions/followerActions';
-const debug  =require('debug')('FOLLOWER');
+const debug  = require('debug')('follower');
 // import $ from 'jquery';
 import User from './User';
 // import onUsersEnter from '../../routes/route_data';
@@ -39,11 +39,11 @@ class UserContainer extends React.Component{
 	handleFollow(e) {
 		let userId = 1;
 		console.log(e.target.value);
-		debug
 		let follower = {followerId : e.target.value};
+		debug("%O");
 		let followers = Object.assign({}, this.state.user.followers, follower);
 		this.props.actions.createFollower(followers);
-		debug
+		debug("%O");
 	}
 	userRow(user,index){return (<li key={user+index}>{user}</li>);}
 	render(){

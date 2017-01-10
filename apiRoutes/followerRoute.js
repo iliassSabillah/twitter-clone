@@ -22,8 +22,24 @@ const createFollower = (req,res)=>{
 		followedId: 1,
 		followerId: req.params.followerId
 
-	}).then(newFollower=> { res.send(newFollower)})
+	}).then(newFollower=> {
+		debugger;
+		res.send(newFollower)})
 };
+
+//// create + get content for followers table
+// sequelize.sync({ force: true }).success(function() {
+// 	User.create({ name: 'jon' }).success(function(jon) {
+// 		User.create({ name: 'bob' }).success(function(bob) {
+// 			jon.addFollower(bob).success(function() {
+// 				jon.getFollowers().success(function(followers) {
+// 					console.log(followers.map(function(person) {return person.name}));
+// 				});
+// 			});
+// 		});
+// 	});
+// });
+
 
 followerRouter.route('/')
 	.get(getFollowers)

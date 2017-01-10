@@ -5,7 +5,11 @@ const models = require('../models');
 
 // GET specific user by id
 const getUser = (req,res)=>{
-	models.User.findOne({where:{id:req.params.id}})
+	models.User.findOne({where:{id:req.params.id},
+		include: [
+			{model: models.Tweet}
+		]
+			})
 		.then(user=>{res.send(user)});
 };
 
@@ -13,25 +17,18 @@ const getUser = (req,res)=>{
 const postUser = (req,res)=>{
 	models.User.create({
 		username: req.body.username,
-		location: req.body.address,
 		email: req.body.email,
 		password: req.body.password,
+		profilePhoto: req.body.profilePhoto,
+		headerPhoto: req.body.headerPhoto,
+		location: req.body.location,
+		website: req.body.website,
+		birthday: req.body.birthday,
+		bio : req.body.bio
 
-	}).then(newUser=> { res.send(newUser)})
+	}).then(newUser=> res.send(newUser))
 };
 
-//// create + get content for followers table
-// sequelize.sync({ force: true }).success(function() {
-// 	User.create({ name: 'jon' }).success(function(jon) {
-// 		User.create({ name: 'bob' }).success(function(bob) {
-// 			jon.addFollower(bob).success(function() {
-// 				jon.getFollowers().success(function(followers) {
-// 					console.log(followers.map(function(person) {return person.name}));
-// 				});
-// 			});
-// 		});
-// 	});
-// });
 
 
 userRouter.route('/')

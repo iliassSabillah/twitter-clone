@@ -48,11 +48,13 @@ app.use(session({
 	resave: true,
 	saveUninitialized: true,
 	cookie: { secure: true }
-}))
+}));
 
 app.use('/api/users', require('../apiRoutes/index').userRouter);
 app.use('/api/tweet', require('../apiRoutes/index').tweetRouter);
 // app.use('/api/signin', require('./routes/index').signinRouter);
+// app.use('/api/followers', require('./routes/index').followerRouter);
+
 
 
 app.get('/*', (req, res)=> {
