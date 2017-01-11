@@ -1,26 +1,27 @@
-@import url('https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css');
+/*@import url('https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css');*/
 
 #root {
 	background-color: #F4F8FB;
-	font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font: 14px 'Garamond', Garamond, Arial, sans-serif;
 	color: #4d4d4d;
-	height: 100vh; //Set view to 100% of screen
+	height: 100vh; // Set view to 100% of screen
 	min-width: 400px;
-	max-width: 100%;
+	/*max-width: 100%;*/
 	margin: 0 auto;
 
 }
 
 body {
-	background: #F4F8FB;
+	/*background: #F4F8FB;*/
 	text-align: center;
 	width: 100%;
 	/*font-family: 'Tillana', sans-serif;*/
 }
 
 .box-row {
+	lineHeight: 1;
 	display: flex;
-	flex: row;
+	flex-direction: row;
 	justify-content: space-around;
 }
 .test1 {
@@ -33,7 +34,6 @@ body {
 .close {
 	right: 15px;
 }
-
 .test3 {
 	background-color: #FFFFFF;
 	border: 1px solid #e1e8ed;
