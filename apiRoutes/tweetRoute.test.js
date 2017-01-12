@@ -1,9 +1,40 @@
-import expect from 'expect';
+var expect = require('chai').expect;
+var supertest = require('supertest');
+var server = require('../tools/srcServer');
+var models = require('../models');
 
-export default  describe('TweetRouteTest', () => {
-	it('should pass', () => {
-		expect(true).toEqual(true);
+describe('Tweet tests', () => {
+// Seeds our DB to enable us to run tests
+	var tweets = [
+		{tweet: 'tweet1', UserId: '1'},
+		{tweet: 'tweet2', UserId: '2'},
+		{tweet: 'tweet3', UserId: '3'}
+	];
+	before(() => {
+		return models.Tweet.sync({force: true})
+			.then(() => models.Tweet.bulkCreate(tweets))
+			.then(() => done())
+			.catch((err) => console.log("DB Error", err))
 	});
-});
 
-// tweetRouteTest;
+	  it(`'/api/tweet/:userId' should respond with all tweets by one user`, (done) => {
+		supertest(server)
+		  .get('/api/tweet/2')
+		  .end((err, res) => {
+			console.log('RES BODY:', res.body);
+			expect(res.body).be.a('object');
+			done();
+		  })
+	  });
+
+	it(`'/api/tweet' should respond with all tweets`, (done) => {
+		supertest(server)
+			.get('/api/tweet')
+			.end((err, res) => {
+				expect(res.body).be.a('array');
+				expect(res.body.length).equal(3);
+				done();
+			})
+	})
+
+})
