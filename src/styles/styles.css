@@ -2,31 +2,44 @@
 
 /* ##########  NAVBAR  ########## */
 
-.navBarTotal {
+.tweetBox {
 	display: flex;
 	flex-direction: row;
 	width: 100%;
 	flex-wrap: nowrap;
-	background-color: lightblue;
-	align-content: center;
+	align-items: center;
 }
 
-.leftSide {
+.picsDiv {
 	display: flex;
 	justify-content: flex-start;
-	width: 50%;
-	background-color: purple;
 	padding: 5px 5px;
-	align-content: center;
+	align-items: center;
 }
-
-.rightSide {
+.userInfo {
+	margin-right: -10px;
+}
+.userTag {
+	/*display: flex;*/
+	color: #292F33;
+	font-size: 18px;
+	font-weight: 700;
+	/*line-height: 25px;*/
+	/*position: absolute;*/
+}
+.userTwitter {
+	padding-top: 3px;
+	color: #66757F;
+	font-size: 12px;
+}
+.tweetInput {
 	display: flex;
 	justify-content: flex-end;
-	width: 50%;
-	background-color: pink;
+	border: 1 solid #1DA1F2;
+	/*width: 50%;*/
+	/*background-color: pink;*/
 	padding: 5px 5px;
-	align-content: center;
+	align-items: center;
 }
 
 
@@ -44,8 +57,77 @@ div.container-fluid {
 	height: 32px;
 	width: 32px;
 	border-radius: 5px;
-	border: 2px solid #00848B;
-	background-color: #F4F8FB;
+	border: 2px solid #7342C2;
+	background-color: #794BCA;
+}
+.containerTest1 {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+}
+.testTopDiv {
+	background-color: #1DA1F2;
+}
+.testTopDiv, .testBottomDiv {
+	z-index: -1;
+}
+
+.testFrontDiv {
+	z-index: 1;
+	top: 60px;
+	left: 15px;
+	position: absolute;
+}
+.searchDiv {
+	display: flex;
+	position: relative;
+	align-items: center;
+}
+#leeds {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	flex-wrap: nowrap;
+	align-items: center;
+}
+#search {
+	z-index: 0;
+}
+.sherlock {
+	position: absolute;
+	display: block;
+	height: 26px;
+	width: 26px;
+	right: 30px;
+	color: #292F33;
+	margin-top: auto;
+	z-index: 1;
+}
+.portrait {
+	display: flex;
+	background-color: #1DA1F2;
+	border: 2px solid #FFFFFF;
+	border-radius: 7px;
+	height: 72px;
+	width: 72px;
+	align-items: center;
+	justify-content: center;
+}
+
+.stats {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	color: #8899A6;
+	font-size: 10px;
+	letter-spacing: 0.2em
+}
+.statsNum {
+	color: #1DA1F2;
+	font-size: 18px;
+	font-weight: 500;
+	padding-top: 3px;
 }
 #root {
 	background-color: #F4F8FB;
