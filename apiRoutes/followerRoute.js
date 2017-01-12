@@ -34,7 +34,7 @@ followerRouter.route('/')
 	.post(createFollower)
 	.get(getFollowers);
 
-followerRouter.route('/:username/:id')
+followerRouter.route('/:id')
 	.get(getFollower);
 
 

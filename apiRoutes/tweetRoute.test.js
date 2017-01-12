@@ -5,14 +5,14 @@ var models = require('../models');
 
 describe('Tweet tests', () => {
 // Seeds our DB to enable us to run tests
-	before(() => {
+	before((done) => {
 		return models.Tweet.sync({force: true})
 			.then(() => models.Tweet.bulkCreate([
 				{tweet: 'tweet1', UserId: '1'},
 				{tweet: 'tweet2', UserId: '2'},
 				{tweet: 'tweet3', UserId: '3'}
 			]))
-			.then(() => done())
+			.then(done)
 			.catch((err) => console.log("DB Error", err))
 	});
 

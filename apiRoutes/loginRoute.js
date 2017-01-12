@@ -17,7 +17,7 @@ const userLogin = (req,res)=> {
 		})
 		.then((user) => {
 			if (user && user.password === userInfo.password) {
-				console.log('Password is correct')
+				console.log('Password is correct');
 				return {success: true, user: user}
 			} else if (!user) {
 				console.log('Create New User');

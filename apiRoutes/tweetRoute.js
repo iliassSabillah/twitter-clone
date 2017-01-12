@@ -25,12 +25,6 @@ const postTweet = (req,res)=>{
 };
 
 // GET specific tweet by id
-const getTweet = (req,res)=>{
-	models.Tweet.findOne({where:{id:req.params.id}})
-		.then(tweet=>{res.send(tweet)});
-};
-
-// GET specific tweet by id
 const deleteTweet = (req,res)=>{
 	models.Tweet.findOne({where:{id:req.params.id}})
 		.then(tweet=>{tweet.destroy()});

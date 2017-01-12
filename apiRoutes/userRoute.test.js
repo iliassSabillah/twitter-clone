@@ -4,29 +4,31 @@ const models = require('../models');
 const supertest = require('supertest');
 
 describe('Users tests', () => {
-	before(() => {
+	before((done) => {
 		return models.User.sync({force: true})
 			.then(() => models.User.bulkCreate([
 				{username: 'test0', password:  'test0',email: 'test0@gmail.com',profilePhoto:'',headerPhoto:'',website:'test0.com',birthday:'20-12-2010',location:'NY',bio:'test0'},
 				{username: 'test1', password:  'test1',email: 'test1@gmail.com',profilePhoto:'',headerPhoto:'',website:'test1.com',birthday:'20-12-2010',location:'NY',bio:'test1'}
 			]))
-			.then(() => done())
+			.then(done)
 	});
 
 	// test GET users from users table
-	it(`'/' GET should get all users`, (done) => {
+	it(`'api/users' GET should get all users`, (done) => {
 		supertest(srcServer)
 			.get('/api/users')
 			.end((err, res) => {
-				expect(res.body).be.a('array');
-				expect(res.body.length).equal(2);
-				done();
-			});
+				expect(res.body.length).eql(2);
+				expect(res.body[0].username).equal(users[0].username);
+				expect(res.body[1].username).equal(users[1].username);
+				// done();
+			}).then(done);
 	});
 
 
+
 // test GET user by name
-	it(`'/:username' should get 1 user`, (done) => {
+	it(`'api/users/:username' should get 1 user`, (done) => {
 		supertest(srcServer)
 			.get('/api/users/test1')
 			.end((err, res) => {
@@ -38,7 +40,7 @@ describe('Users tests', () => {
 	});
 
 	// test creating a new user
-	it(`'/' POST should post a new user to the database`, (done) => {
+	it(`'api/users' POST should post a new user to the database`, (done) => {
 		supertest(srcServer)
 			.post('/api/users')
 			.type('form')

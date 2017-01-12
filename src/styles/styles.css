@@ -1,26 +1,24 @@
-@import url('https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css');
-
 #root {
 	background-color: #F4F8FB;
 	font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	color: #4d4d4d;
 /*   Set view to 100% of screen */
-	height: 100vh; 
+	height: 100vh;
 	min-width: 400px;
 	max-width: 100%;
 	margin: 0 auto;
 
 }
-body {
-	background: #F4F8FB;
-	text-align: center;
-	width: 100%;
-	/*font-family: 'Tillana', sans-serif;*/
-}
+/*body {*/
+	/*background: #F4F8FB;*/
+	/*text-align: center;*/
+	/*width: 100%;*/
+	/*!*font-family: 'Tillana', sans-serif;*!*/
+/*}*/
 
 .box-row {
 	display: flex;
-	flex: row;
+	flex-direction: row;
 	justify-content: space-around;
 }
 .test1 {
@@ -81,21 +79,21 @@ body {
 .picdiv {
 	width: auto;
 	height: 60%;
-	background-image: url(http://www.gannett-cdn.com/-mm-/324661c7c44fecb919f261908ca611ef4164c88a/c=204-0-3996-2851&r=x404&c=534x401/local/-/media/2016/12/05/USATODAY/USATODAY/636165343642587459-AFP-AFP-IJ4VK-87036932.JPG);
+	background-image: url('http://www.gannett-cdn.com/-mm-/324661c7c44fecb919f261908ca611ef4164c88a/c=204-0-3996-2851&r=x404&c=534x401/local/-/media/2016/12/05/USATODAY/USATODAY/636165343642587459-AFP-AFP-IJ4VK-87036932.JPG');
 	background-size: 100%;
 }
 
 .picdivtwo {
 	width: auto;
 	height: 60%;
-	background-image: url(http://static6.businessinsider.com/image/51deda14ecad04c317000006/tom-brady-leaves-practice-with-a-possible-knee-injury.jpg);
+	background-image: url('http://static6.businessinsider.com/image/51deda14ecad04c317000006/tom-brady-leaves-practice-with-a-possible-knee-injury.jpg');
 	background-size: 100%;
 }
 
 .picdivthree {
 	width: auto;
 	height: 60%;
-	background-image: url(http://www.billboard.com/files/media/kanye-west-june-2016-performance-billboard-1548.jpg);
+	background-image: url('http://www.billboard.com/files/media/kanye-west-june-2016-performance-billboard-1548.jpg');
 	background-size: 100%;
 }
 
@@ -373,7 +371,6 @@ button:focus {outline: none;}
 .loginmodal-container h1 {
 	text-align: center;
 	font-size: 1.8em;
-	font-family: roboto;
 }
 
 .loginmodal-container input[type=submit] {
