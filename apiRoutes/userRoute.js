@@ -13,6 +13,16 @@ const getUser = (req,res)=>{
 		.then(user=>{res.send(user)});
 };
 
+// GET specific User Followers by id
+const getUserFollowers = (req,res)=>{
+	models.User.findOne({where:{id:req.params.id},
+		include: [
+			{model: models.Followers},{model:models.Tweet}
+		]
+	})
+		.then(user=>{res.send(user)});
+};
+
 const getUsers = (req,res)=>{
 	models.User.findAll({include:[{model: models.Tweet},{model:models.Message}]})
 		.then(users=>{res.send(users)});
@@ -47,6 +57,7 @@ userRouter.route('/')
 
 userRouter.route('/:username')
 	.get(getUser)
+	.get(getUserFollowers)
 	.delete(destroyUser);
 
 
