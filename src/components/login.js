@@ -15,8 +15,11 @@ const LogIn = React.createClass({
 			type: 'POST',
 			data: this.state
 		})
-		.done((data) => {
-			console.log('received user data', data)
+		.done((response) => {
+			console.log('response:', response)
+			if (typeof response === "string"){
+				alert(response)
+			}
 		})
 	},
 	updateUsername: function (event) {
