@@ -11,6 +11,12 @@ const getAllTweet = (req, res)=>{
 		})
 };
 
+// GET specific tweet by id
+const getTweet = (req,res)=>{
+	models.Tweet.findById(req.params.id)
+		.then(tweet=>{res.send(tweet)});
+};
+
 // POST (create) a new tweet
 const postTweet = (req,res)=>{
 	models.Tweet.create({

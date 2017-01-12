@@ -8,8 +8,9 @@ export function createTweet(tweet){
 	return {type: types.CREATE_TWEET,tweet};
 }
 
-export function fetchTweet() {
-	const request = axios.get('/api/tweet');
+export function fetchTweet(props) {
+	console.log('tweet this',this);
+	const request = axios.get('/api/tweets/');
 
 	return (dispatch)=>{
 		request.then(({data})=>{

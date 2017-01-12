@@ -7,9 +7,10 @@ const INITIAL_STATE = {};
 export default function followerReducer(state= INITIAL_STATE, action){
 	switch(action.type){
 		case types.FETCH_FOLLOWER:
-			return   action.follower;
+			console.log(action.user);
+			return   action.user;
 		case types.CREATE_FOLLOWER:
-			return Object.assign({},state, action.follower);
+			return Object.assign({},state, action.user);
 		// case FETCH_FOLLOWERS:
 		// 	const newFollowers = _.mapKeys(action.follower,'id');
 		// 	return	{...state, ...newFollowers};

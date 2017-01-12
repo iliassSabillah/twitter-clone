@@ -1,5 +1,5 @@
 //This component handles the Home template
-import React, {PropTypes} from 'react';
+import React, {Component, PropTypes} from 'react';
 import 'jquery-ui';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
@@ -11,22 +11,11 @@ import User from './User';
 // import onUsersEnter from '../../routes/route_data';
 
 
-class UserContainer extends React.Component{
+class UserContainer extends Component{
 	constructor(props, context){
 		super(props, context);
-		this.state = {
-			user: {
-				id: '',
-				username: '',
-				email: '',
-				password:'',
-				followers: {
-					followedId : 1,
-					followerId : ''
-				}
-			}
-		};
-		this.userRow= this.userRow.bind(this);
+		console.log('user container props',props);
+
 		this.handleFollow = this.handleFollow.bind(this);
 	}
 	// handleInput(e,inputField){
@@ -36,19 +25,15 @@ class UserContainer extends React.Component{
 	// 	this.props.actions.createUser(user);
 	// }
 	handleFollow(e) {
-		let userId = 1;
-		console.log(e.target.value);
+		// let userId = 1;
 		let follower = {followerId : e.target.value};
-		debug("%O");
-		let followers = Object.assign({}, this.state.user.followers, follower);
+		let followers = Object.assign({}, this.props.user, follower);
 		this.props.actions.createFollower(followers);
-		debug("%O");
 	}
-	userRow(user,index){return (<li key={user+index}>{user}</li>);}
 	render(){
-		console.log('state inside user container:',this.props.user);
+		// console.log('state inside user container:',this.props.user.followers);
 		return (
-				<User follow={this.handleFollow} user={this.props.user} handleSubmit={this.handleSubmit} userRow={this.userRow}/>
+				<User follow={this.handleFollow} user={this.props} handleSubmit={this.handleSubmit} userRow={this.userRow}/>
 		);
 	}
 }
@@ -67,3 +52,15 @@ const mapDispatchToProps=(dispatch)=>({
 	});
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserContainer);
+// this.state = {
+// 	user: {
+// 		id: '',
+// 		username: '',
+// 		email: '',
+// 		password:'',
+// 		followers: {
+// 			followedId : 1,
+// 			followerId : ''
+// 		}
+// 	}
+// };

@@ -66,11 +66,12 @@ module.exports = (sequelize, DataTypes)=> {
 				}
 			},
 
-	}, {
-		hooks: {
-			afterValidate : user => user.password = bcrypt.hashSync(user.password,8)
-		}
 	},
+	// 	{
+	// 	hooks: {
+	// 		afterValidate : user => user.password = bcrypt.hashSync(user.password,8)
+	// 	}
+	// },
 		{
 		classMethods: {
 			associate: (models)=> {

@@ -2,7 +2,7 @@
 import React, {PropTypes, Component}   from 'react';
 
 
-class User extends React.Component{
+class User extends Component{
 	render() {
 		console.log('inside user', this.props);
 		return (
@@ -15,10 +15,10 @@ class User extends React.Component{
 					<input type="text" defaultValue={this.props.website} placeholder="Website"/>
 					<input type="text" defaultValue={this.props.birthday} placeholder="Birthday"/>
 					<input type="button"className="btn" value="Cancel"/>
-					<input onClick={this.props.saveInfo} className="btn btn-primary" type="button" value='Save Changes'/>
+					<input onClick={this.props.saveInfo} className="btn btn-primary" type="button" value="Save Changes"/>
 
 					<label>Follow me! --> </label>
-					<input onClick={this.props.follow} className="btn btn-primary" type="button" value='2'/>
+					<input onClick={this.props.follow} className="btn btn-primary" type="button" value="2"/>
 				</form>
 			</div>
 		);
@@ -31,7 +31,12 @@ User.propTypes = {
 	saveInfo: PropTypes.func,
 	user: React.PropTypes.object,
 	handleSubmit: PropTypes.func,
-	follow: PropTypes.func
+	follow: PropTypes.func,
+	username :PropTypes.string,
+	bio :PropTypes.string,
+	location :PropTypes.string,
+	website :PropTypes.string,
+	birthday :PropTypes.string,
 };
 
 export default User;

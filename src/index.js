@@ -10,6 +10,8 @@ import './styles/styles.css'; //Webpack can import CSS files too
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import {fetchUser} from './actions/userActions';
 // import {fetchTweet} from './actions/tweetActions';
+import {fetchFollowers} from './actions/followerActions';
+
 
 
 
@@ -33,5 +35,5 @@ render (
 // store.dispatch(fetchUser());
 //
 // store.dispatch(fetchTweet());
-// store.dispatch(fetchEducation());
+// store.dispatch(fetchFollowers());
 

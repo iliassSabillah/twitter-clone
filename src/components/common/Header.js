@@ -60,14 +60,15 @@ const Header = (props)=> {
 							<div style={{borderBottom: '1px solid #E1E8ED', backgroundColor: '#E6F6FD', height: 58}} />
 								{/* <button type="button" className="close" data-dismiss="modal" aria-label="Close" aria-hidden="true">&times;</button> */}
 							<div style={{borderBottom: '1px solid #E1E8ED', backgroundColor: '#F4F8FB', height: 40}} />
-							<Link to="tweet">Tweet</Link>
+							<Link to="profile/tweet">Tweet</Link>
 						</li>
 					</div>
 					<div className="test3">
-					<li><Link to="profile">Profile</Link></li>
+					<li><Link to="/profile">Profile</Link></li>
 				</div>
 				</ul>
 			</div>
+			{props.children}
 		</div>
 	);
 };

@@ -8,4 +8,5 @@ export const FETCH_MESSAGE = 'FETCH_MESSAGE';
 export const DELETE_MESSAGE = 'DELETE_MESSAGE';
 export const LOG_IN = 'LOG_IN';
 export const CREATE_FOLLOWER = 'CREATE_FOLLOWER';
+export const FETCH_FOLLOWER = 'FETCH_FOLLOWER';
 
