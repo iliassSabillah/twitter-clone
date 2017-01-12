@@ -9,6 +9,7 @@ import Header from './Header'
 import $ from 'jquery';
 import path from 'path';
 import Image from '../image/image';
+import ProfileBanner from './profileBanner';
 
 // import '../../profile.png'
 
@@ -17,7 +18,8 @@ const ProfileNav = (props)=> {
 		$(".nav-pills").on( "tabsactivate", (event,ui)=> window.location.hash = ui.panel.id);
 	});
 	return (
-		<div>
+		<div style={{width: '100vw'}}>
+      <ProfileBanner />
 			<nav className="navbar navbar-default" style={{height: 60, width: '100vw', backgroundColor: '#FFFFFF'}}>
 				<div className="container-fluid">
 					<div className="collapse navbar-collapse" id="profileNavDiv">
