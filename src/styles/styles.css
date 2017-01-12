@@ -133,12 +133,12 @@ div.container-fluid {
 	background-color: #F4F8FB;
 	font: 14px 'Garamond', Garamond, Arial, sans-serif;
 	color: #4d4d4d;
-	height: 100vh; // Set view to 100% of screen
+/*   Set view to 100% of screen */
+	height: 100vh; 
 	min-width: 400px;
 	/*max-width: 100%;*/
 	margin: 0 auto;
 }
-
 body {
 	/*background: #F4F8FB;*/
 	text-align: center;
@@ -185,4 +185,496 @@ body {
 }
 .tweetInput {
 	height: 1em;
+/*-------------- HOME PAGE ------------------ */
+
+.home {
+	height: auto;
+	background-color: #E5E4E2;
+	margin-top: -7px;
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+
+/*-------------- FOOTER ------------------ */
+
+.footer {
+	width: auto;
+	height: 80px;
+	background-color: #848482;
+	margin-top: -40px;
+}
+
+.box {
+	width: 100%;
+	height: 300px;
+	border: 1px solid silver;
+	border-radius: 5px;
+	background-color: white;
+	display: inline-block;
+	overflow: hidden;
+	margin-bottom: 40px;
+}
+
+.picdiv {
+	width: auto;
+	height: 60%;
+	background-image: url('http://www.gannett-cdn.com/-mm-/324661c7c44fecb919f261908ca611ef4164c88a/c=204-0-3996-2851&r=x404&c=534x401/local/-/media/2016/12/05/USATODAY/USATODAY/636165343642587459-AFP-AFP-IJ4VK-87036932.JPG');
+	background-size: 100%;
+}
+
+.picdivtwo {
+	width: auto;
+	height: 60%;
+	background-image: url('http://static6.businessinsider.com/image/51deda14ecad04c317000006/tom-brady-leaves-practice-with-a-possible-knee-injury.jpg');
+	background-size: 100%;
+}
+
+.picdivthree {
+	width: auto;
+	height: 60%;
+	background-image: url('http://www.billboard.com/files/media/kanye-west-june-2016-performance-billboard-1548.jpg');
+	background-size: 100%;
+}
+
+.boxheading {
+	width: auto;
+	height: 100px;
+	background-color: white;
+	color: black;
+	padding: 20px;
+	font-size: 16px;
+	overflow: hidden;
+}
+
+/* MEDIA QUERY FOR THE BOXES ON THE HOME PAGE */
+
+@media screen and (max-width: 767px) {
+
+	.box {
+		margin-top: 5px;
+		margin-bottom: 5px;
+	}
+
+	.boxheading {
+		overflow: hidden;
+	}
+
+	#logo {
+		margin-left: 45%;
+		display: block;
+	}
+
+	.siteHeader {
+		text-align: center;
+	}
+
+	#headertext {
+		display: block;
+	}
+
+}
+
+#signupform {
+	background-color: #e0245e;
+	color: white;
+	font-family: 'Titillium Web', sans-serif;
+	padding: 20px;
+}
+
+#signintext {
+	font-size: 18px;
+}
+
+.enteremail {
+	width: 100%;
+	height: 25px;
+	border: 1px solid white;
+	background-color: white;
+	color: black;
+	text-align: left;
+	border-radius: 5px;
+	margin-top: 20px;
+	padding: 5px;
+}
+
+.enterpassword {
+	width: 100%;
+	height: 25px;
+	border: 1px solid white;
+	background-color: white;
+	color: black;
+	text-align: left;
+	border-radius: 5px;
+	margin-top: 10px;
+	padding: 5px;
+	margin-bottom: 10px;
+}
+
+.remforgot {
+	display: inline-block;
+	color: white;
+	font-family: 'Titillium Web', sans-serif;
+	font-size: 12px;
+}
+
+#rem {
+	float: left;
+}
+
+#pwd {
+	float: right;
+}
+
+input:focus {outline: none;}
+
+.submitlogin {
+	width: 100%;
+	height: 40px;
+	border: 1px solid white;
+	background-color: #e0245e;
+	border-radius: 5px;
+	float: right;
+	display: inline-block;
+	font-family: 'Lato', sans-serif;
+	color: white;
+	transition: 0.4s;
+	margin-left: 5px;
+	margin-top: 20px;
+}
+
+.submitlogin:hover {
+	background-color: white;
+	color: #e0245e;
+	transition: 0.4s;
+}
+
+.featuredPosts {
+	width: auto;
+	height: 400px;
+	background-color: #E5E4E2;
+}
+
+#featuredhr {
+	width: 100%;
+	border: .5px solid silver;
+	float: left;
+	display: inline-block;
+	margin-top: -63px;
+	border-top-color: #E5E4E2;
+	border-left-color: #E5E4E2;
+	border-right-color: #E5E4E2;
+}
+
+#featuredHeading {
+	display: inline-block;
+	color: black;
+	font-family: 'Titillium Web', sans-serif;
+	font-weight: lighter;
+	font-size: 18px;
+	margin-bottom: 50px;
+}
+
+#greycover {
+	background-color: #E5E4E2;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+#featuredboxes {
+	margin-top: -330px;
+}
+
+@media screen and (max-width: 800px) {
+	#signupform {
+		margin-bottom: 40px;
+	}
+}
+/* ================================= HEADER CSS ================================== */
+
+.siteHeader {
+	width: auto;
+	height: auto;
+	background-color: #e0245e;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	padding-left: 20px;
+	padding-right: 20px;
+	/*	background-image: url(http://4vector.com/i/free-vector-black-bird-clip-art_118335_Black_Bird_clip_art_hight.png);
+        background-repeat: no-repeat;
+        background-size: 30%;
+        background-position: right top;*/
+}
+
+#logo {
+	font-size: 45px;
+	color: white;
+	float: left;
+	display: inline-block;
+}
+
+#headertext {
+	color: white;
+	font-family: 'Lato', sans-serif;
+	display: inline-block;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+#signup {
+	width: 120px;
+	height: 40px;
+	border: 1px solid white;
+	background-color: #e0245e;
+	border-radius: 5px;
+	float: right;
+	display: inline-block;
+	font-family: 'Lato', sans-serif;
+	color: white;
+	transition: 0.4s;
+	margin-left: 5px;
+}
+
+#signup:hover {
+	background-color: white;
+	color: #e0245e;
+	transition: 0.4s;
+}
+
+#login {
+	width: 120px;
+	height: 40px;
+	border: 1px solid white;
+	background-color: #e0245e;
+	border-radius: 5px;
+	float: right;
+	display: inline-block;
+	font-family: 'Lato', sans-serif;
+	color: white;
+	transition: 0.3s;
+	margin-right: 5px;
+}
+
+button:focus {outline: none;}
+
+#login:hover {
+	background-color: white;
+	color: #e0245e;
+	transition: 0.3s;
+}
+
+#searchicon {
+	margin-top: 1px;
+}
+
+/* ______________________ MEDIA QUERY FOR THE HEADER ___________________________ */
+
+@media screen and (max-width: 767px) {
+
+	/*	#logo {
+            margin-left: 50%;
+        }
+
+        #headertext {
+            margin-left: 10%;
+        }*/
+
+	#signup {
+		margin-right: 10%;
+	}
+
+	#login {
+		margin-left: 10%;
+	}
+
+	.siteHeader {
+		text-align: center;
+	}
+}
+
+/* ______________________ CSS FOR SIGN UP FORM ___________________________ */
+
+
+/****** LOGIN MODAL ******/
+.loginmodal-container {
+	padding: 30px;
+	max-width: 350px;
+	width: 100% !important;
+	background-color: #F7F7F7;
+	margin: 0 auto;
+	border-radius: 2px;
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+	overflow: hidden;
+	font-family: roboto;
+}
+
+.loginmodal-container h1 {
+	text-align: center;
+	font-size: 1.8em;
+	font-family: roboto;
+}
+
+.loginmodal-container input[type=submit] {
+	width: 100%;
+	display: block;
+	margin-bottom: 10px;
+	position: relative;
+}
+
+.loginmodal-container input[type=text], input[type=password] {
+	height: 44px;
+	font-size: 16px;
+	width: 100%;
+	margin-bottom: 10px;
+	-webkit-appearance: none;
+	background: #fff;
+	border: 1px solid #d9d9d9;
+	border-top: 1px solid #c0c0c0;
+	/* border-radius: 2px; */
+	padding: 0 8px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
+.loginmodal-container input[type=text]:hover, input[type=password]:hover {
+	border: 1px solid #b9b9b9;
+	border-top: 1px solid #a0a0a0;
+	-moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+	-webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+	box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.loginmodal {
+	text-align: center;
+	font-size: 14px;
+	font-family: 'Arial', sans-serif;
+	font-weight: 700;
+	height: 36px;
+	padding: 0 8px;
+	/* border-radius: 3px; */
+	/* -webkit-user-select: none;
+      user-select: none; */
+}
+
+.loginmodal-submit {
+	/* border: 1px solid #3079ed; */
+	border: 0px;
+	color: #fff;
+	text-shadow: 0 1px rgba(0,0,0,0.1);
+	background-color: #4d90fe;
+	padding: 17px 0px;
+	font-family: roboto;
+	font-size: 14px;
+	/* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
+}
+
+.loginmodal-submit:hover {
+	/* border: 1px solid #2f5bb7; */
+	border: 0px;
+	text-shadow: 0 1px rgba(0,0,0,0.3);
+	background-color: #357ae8;
+	/* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
+}
+
+.loginmodal-container a {
+	text-decoration: none;
+	color: #666;
+	font-weight: 400;
+	text-align: center;
+	display: inline-block;
+	opacity: 0.6;
+	transition: opacity ease 0.5s;
+}
+
+.login-help{
+	font-size: 12px;
+}
+
+/* ================================= NAVBAR CSS ================================== */
+
+/*.navi {
+	width: auto;
+	height: 60px;
+	box-shadow: 0px 3px 3px #D1D0CE;
+}
+*/
+/* ===================================== RESPONSIVE NAVBAR CONTENT ================================================ */
+
+nav ul {
+	background-color: white;
+	overflow: hidden;
+	color: grey;
+	padding: 0;
+	text-align: center;
+	-webkit-transition: max-height 0.4s;
+	-ms-transition: max-height 0.4s;
+	-moz-transition: max-height 0.4s;
+	-o-transition: max-height 0.4s;
+	transition: max-height 0.4s;
+	box-shadow: 0px 3px 3px silver;
+	border: none;
+
+}
+
+nav ul li {
+	display: inline-block;
+	padding: 20px;
+	font-size: 18px;
+	height: 60px;
+	width: 150px;
+	border-left: .5px solid silver;
+	border-right: .5px solid silver;
+	border-bottom: .5px solid silver;
+	margin-bottom: -1px;
+	margin-left: 0px;
+	margin-right: -1px;
+	font-family: 'Titillium Web', sans-serif;
+	color: black;
+	font-weight: lighter;
+}
+
+nav ul li:hover {
+	border-bottom: 5px solid #e0245e;
+}
+
+#ham {
+	color: white;
+	float: right;
+	font-size: 25px;
+	margin-bottom: 10px;
+}
+
+.handle {
+	width: auto;
+	background-color: #848482;
+	box-sizing: border-box;
+	cursor: pointer;
+	height: 50px;
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	display: none;
+}
+
+@media screen and (max-width: 767px) {
+
+	nav ul {
+		max-height: 0px;
+	}
+
+	.showing {
+		max-height: 20em;
+	}
+
+	nav ul li {
+		box-sizing: border-box;
+		width: 100%;
+		padding: 15px;
+		text-align: left;
+	}
+
+
+	.handle {
+		display: block;
+		margin-top: -10px;
+	}
 }

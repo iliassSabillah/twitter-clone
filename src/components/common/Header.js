@@ -1,5 +1,3 @@
-
-
 //This component handles the header navbar component
 import React ,{PropTypes} from 'react';
 import {Link, IndexLink} from 'react-router';
@@ -72,9 +70,31 @@ const Header = (props)=> {
 					</div>
 				</div>
 			</nav>
-
-			
-
+			<div className="sectionNav">
+				<ul className="box-row nav nav-pills center">
+					<div className="test1">
+						<li>
+							{/* <button type="button" className="close" data-dismiss="modal" aria-label="Close" aria-hidden="true">&times;</button> */}
+							<div style={{borderRadiusTop: 5, borderBottom: '1px solid #E1E8ED', backgroundColor: '#1DA1F2', height: 96}} />
+							<div style={{height: 95}} >
+								<IndexLink to="/">Home</IndexLink>
+							</div>
+						</li>
+					</div>
+					<div className="test2">
+						<li>
+							<div style={{borderBottom: '1px solid #E1E8ED', backgroundColor: '#E6F6FD', height: 58}} />
+								{/* <button type="button" className="close" data-dismiss="modal" aria-label="Close" aria-hidden="true">&times;</button> */}
+							<div style={{borderBottom: '1px solid #E1E8ED', backgroundColor: '#F4F8FB', height: 40}} />
+							<Link to="profile/tweet">Tweet</Link>
+						</li>
+					</div>
+					<div className="test3">
+					<li><Link to="/profile">Profile</Link></li>
+				</div>
+				</ul>
+			</div>
+			{props.children}
 		</div>
 	);
 };

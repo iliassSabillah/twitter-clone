@@ -8,12 +8,13 @@
     "open:src": "babel-node tools/srcServer.js",
     "lint": "node_modules/.bin/esw webpack.config.* src tools",
     "lint:watch": "npm run lint -- --watch",
-    "test": "mocha --reporter progress tools/testSetup.js \"src/**/*.test.js\"",
+    "test": "mocha --reporter progress tools/testSetup.js \" src/**/*.test.js\"",
     "test:watch": "npm run test -- --watch"
   },
   "dependencies": {
     "axios": "^0.15.3",
     "babel-polyfill": "6.20.0",
+    "bcryptjs": "^2.4.0",
     "body-parser": "^1.15.2",
     "bootstrap": "3.3.7",
     "classnames": "^2.2.5",
