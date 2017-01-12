@@ -35,7 +35,10 @@ class TweetContainer extends React.Component{
 	tweetRow(tweet,index){return (<li key={tweet+index}>{tweet}</li>);}
 	render(){
 		return (
-			<Tweet handleChange={this.handleChange} tweet={this.props.tweet} handleSubmit={this.handleSubmit} tweetRow={this.tweetRow}/>		);
+			<div className="test1">
+			<Tweet handleChange={this.handleChange} tweet={this.props.tweet} handleSubmit={this.handleSubmit} tweetRow={this.tweetRow}/>
+		</div>
+		);
 	}
 }
 

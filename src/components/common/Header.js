@@ -9,6 +9,7 @@ const Header = (props)=> {
 	});
 	return (
 		<div>
+			{/* { this.props.loginError ? (<div>{this.props.loginError}</div>) : null } */}
 			<nav className="navbar navbar-default">
 				<div className="container-fluid">
 					<div className="navbar-header">
@@ -36,7 +37,7 @@ const Header = (props)=> {
 								</div>
 								<ul className="nav navbar-nav navbar-right">
 									<li><button className="btn btn-outline-primary" href="#">Sign Up</button></li>
-									<li><input className="btn btn-outline-primary" type="submit" value="Sign In"/></li>
+									<li><input className="btn btn-outline-primary" type="submit" value="Log In"/></li>
 								</ul>
 							</form>
 						</ul>
@@ -44,10 +45,27 @@ const Header = (props)=> {
 				</div>
 			</nav>
 			<div className="sectionNav">
-				<ul className="nav nav-pills center">
-					<li><IndexLink to="/">Home</IndexLink></li>
+				<ul className="box-row nav nav-pills center">
+					<div className="test1">
+						<li>
+							{/* <button type="button" className="close" data-dismiss="modal" aria-label="Close" aria-hidden="true">&times;</button> */}
+							<div style={{borderRadiusTop: 5, borderBottom: '1px solid #E1E8ED', backgroundColor: '#1DA1F2', height: 96}} />
+							<div style={{height: 95}} >
+								<IndexLink to="/">Home</IndexLink>
+							</div>
+						</li>
+					</div>
+					<div className="test2">
+						<li>
+							<div style={{borderBottom: '1px solid #E1E8ED', backgroundColor: '#E6F6FD', height: 58}} />
+								{/* <button type="button" className="close" data-dismiss="modal" aria-label="Close" aria-hidden="true">&times;</button> */}
+							<div style={{borderBottom: '1px solid #E1E8ED', backgroundColor: '#F4F8FB', height: 40}} />
+							<Link to="profile/tweet">Tweet</Link>
+						</li>
+					</div>
+					<div className="test3">
 					<li><Link to="/profile">Profile</Link></li>
-					<li><Link to="/profile/tweet">Tweet</Link></li>
+				</div>
 				</ul>
 			</div>
 			{props.children}
@@ -59,5 +77,3 @@ Header.propTypes = {
 };
 
 export default Header;
-
-
