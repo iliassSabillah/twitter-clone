@@ -50,7 +50,7 @@ app.use(session({
 }));
 
 app.use('/api/users', require('../apiRoutes/index').userRouter);
-app.use('/api/tweets', require('../apiRoutes/index').tweetRouter);
+app.use('/api/tweet', require('../apiRoutes/index').tweetRouter);
 app.use('/api/followers', require('../apiRoutes/index').followerRouter);
 
 

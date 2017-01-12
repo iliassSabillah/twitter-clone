@@ -10,7 +10,7 @@ describe('Users tests', () => {
 				{username: 'test0', password:  'test0',email: 'test0@gmail.com',profilePhoto:'',headerPhoto:'',website:'test0.com',birthday:'20-12-2010',location:'NY',bio:'test0'},
 				{username: 'test1', password:  'test1',email: 'test1@gmail.com',profilePhoto:'',headerPhoto:'',website:'test1.com',birthday:'20-12-2010',location:'NY',bio:'test1'}
 			]))
-			.end(() => done())
+			.then(() => done())
 	});
 
 	// test GET users from users table
