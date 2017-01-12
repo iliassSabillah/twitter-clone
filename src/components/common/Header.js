@@ -44,7 +44,7 @@ const Header = (props)=> {
 							<form className="mainNav form-inline">
 								<div className="form-group">
 									<input style={{marginLeft: 5, marginTop: 10, borderRadius: 21, height: 32, backgroundColor: '#F5F8FA', border: '#E1E8ED'}} type="text" className="form-control" id="search" placeholder="Search" />
-									<span className="glyphicon glyphicon-search" />
+									{/* <span className="glyphicon glyphicon-search" /> */}
 								{/* <div className="form-group">
 									<input style={{marginTop: 10+ 'px'}} type="password" className="form-control" id="password" placeholder="Password"/>
 								</div> */}
