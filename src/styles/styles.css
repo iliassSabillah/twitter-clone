@@ -1,5 +1,52 @@
 /*@import url('https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css');*/
 
+/* ##########  NAVBAR  ########## */
+
+.navBarTotal {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	flex-wrap: nowrap;
+	background-color: lightblue;
+	align-content: center;
+}
+
+.leftSide {
+	display: flex;
+	justify-content: flex-start;
+	width: 50%;
+	background-color: purple;
+	padding: 5px 5px;
+	align-content: center;
+}
+
+.rightSide {
+	display: flex;
+	justify-content: flex-end;
+	width: 50%;
+	background-color: pink;
+	padding: 5px 5px;
+	align-content: center;
+}
+
+
+div.container-fluid {
+	border-radius: 0px;
+	padding-left: 0;
+	padding-right: 0;
+	margin-left: 0;
+	margin-right: 0;
+}
+.pics {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 32px;
+	width: 32px;
+	border-radius: 5px;
+	border: 2px solid #00848B;
+	background-color: #F4F8FB;
+}
 #root {
 	background-color: #F4F8FB;
 	font: 14px 'Garamond', Garamond, Arial, sans-serif;
@@ -24,6 +71,9 @@ body {
 	flex-direction: row;
 	justify-content: space-around;
 }
+.mainNav {
+	justify-content: flex-end;
+}
 .test1 {
 	background-color: #FFFFFF;
 	border: 1px solid #e1e8ed;
@@ -47,4 +97,11 @@ body {
 	border-radius: 5px;
 	width: 588px;
 	height: 139px;
+}
+.glyphColor:active, .glyphColor:hover {
+	color: #0084B4;
+	border-bottom: 2px solid #0084B4;
+}
+.tweetInput {
+	height: 1em;
 }
