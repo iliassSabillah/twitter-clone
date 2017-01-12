@@ -13,7 +13,7 @@ const getAllTweet = (req, res)=>{
 
 // GET specific tweet by id
 const getTweet = (req,res)=>{
-	models.Tweet.findOne({where:{id:req.params.id}})
+	models.Tweet.findById(req.params.id)
 		.then(tweet=>{res.send(tweet)});
 };
 

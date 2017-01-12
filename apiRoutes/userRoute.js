@@ -5,13 +5,19 @@ const models = require('../models');
 
 // GET specific user by id
 const getUser = (req,res)=>{
-	models.User.findOne({where:{id:req.params.id},
+	models.User.findOne({where:{username:req.params.username},
 		include: [
-			{model: models.Tweet}
+			{model: models.Tweet},{model:models.Message}
 		]
 			})
 		.then(user=>{res.send(user)});
 };
+
+const getUsers = (req,res)=>{
+	models.User.findAll({include:[{model: models.Tweet},{model:models.Message}]})
+		.then(users=>{res.send(users)});
+};
+
 
 // POST (create) a new user
 const postUser = (req,res)=>{
@@ -29,14 +35,19 @@ const postUser = (req,res)=>{
 	}).then(newUser=> res.send(newUser))
 };
 
-
+const destroyUser = (req,res)=> (
+	models.User.destroy({
+		where: {username: req.params.username}
+	})
+)
 
 userRouter.route('/')
-	// .get(getUsers)
+	.get(getUsers)
 	.post(postUser);
 
-userRouter.route('/:id')
-	.get(getUser);
+userRouter.route('/:username')
+	.get(getUser)
+	.delete(destroyUser);
 
 
 module.exports = userRouter;

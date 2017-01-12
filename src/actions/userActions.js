@@ -8,26 +8,26 @@ export function createUser(user){
 }
 
 
-export function fetchUser() {
-	const request = axios.get('/api/users/1');
+export function fetchUser(props) {
+	console.log('user params',props);
+	const request = axios.get('/api/users');
 
 	return (dispatch)=>{
 		request.then(({data})=>{
 			dispatch({type: types.FETCH_USER, user: data});
 		});
 	};
-
 }
 
-export function postUser() {
-	const request = axios.put('/api/users/1');
-
-	return (dispatch)=>{
-		request.then(({data})=>{
-			dispatch({type: types.UPDATE_USER, user: data});
-		});
-	};
-}
+// export function postUser() {
+// 	const request = axios.put('/api/users/1');
+//
+// 	return (dispatch)=>{
+// 		request.then(({data})=>{
+// 			dispatch({type: types.UPDATE_USER, user: data});
+// 		});
+// 	};
+// }
 
 
 

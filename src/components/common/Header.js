@@ -46,10 +46,11 @@ const Header = (props)=> {
 			<div className="sectionNav">
 				<ul className="nav nav-pills center">
 					<li><IndexLink to="/">Home</IndexLink></li>
-					<li><Link to="profile">Profile</Link></li>
-					<li><Link to="tweet">Tweet</Link></li>
+					<li><Link to="/profile">Profile</Link></li>
+					<li><Link to="/profile/tweet">Tweet</Link></li>
 				</ul>
 			</div>
+			{props.children}
 		</div>
 	);
 };

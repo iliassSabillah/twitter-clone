@@ -33,7 +33,6 @@ models.sequelize.sync().then(()=> {
 	 * Listen on provided port, on all network interfaces.
 	 */
 
-
 	app.listen(port, (err)=> {
 		if (err) {
 			console.log(err);
@@ -51,10 +50,8 @@ app.use(session({
 }));
 
 app.use('/api/users', require('../apiRoutes/index').userRouter);
-app.use('/api/tweet', require('../apiRoutes/index').tweetRouter);
-// app.use('/api/signin', require('./routes/index').signinRouter);
-app.use('/api/followers', require('./routes/index').followerRouter);
-
+app.use('/api/tweets', require('../apiRoutes/index').tweetRouter);
+app.use('/api/followers', require('../apiRoutes/index').followerRouter);
 
 
 app.get('/*', (req, res)=> {

@@ -6,8 +6,8 @@ const models = require('../models');
 models.Message.sync({force: true})
 //add the following message to the database:
 	.then(() => models.Message.bulkCreate([
-		{message: 'Access Code produces high quality web developers through a 10-month curriculum developed and taught by leading experts from companies such as Artsy, Google, FlyLabs and Betaworks.'},
-		{include:[models.User]}
+		{message: 'Access Code produces high quality web developers through a 10-month curriculum developed and taught by leading experts from companies such as Artsy, Google, FlyLabs and Betaworks.',UserId:1},
+
 
 	]))
 	//the following messages should NOT be added to your database:
