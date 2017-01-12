@@ -6,7 +6,7 @@ const followerRouter = require('./followerRoute');
 
 
 module.exports = {
-	userRouter:userRouter,
+	userRouter: userRouter,
 	messageRouter:messageRouter,
 	tweetRouter: tweetRouter,
 	followerRouter: followerRouter

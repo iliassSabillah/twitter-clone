@@ -3,9 +3,10 @@ import webpack from 'webpack';
 import path from 'path';
 import config from '../webpack.config.dev';
 import open from 'open';
-const models = require('../models');
-const bodyParser = require('body-parser');
-const session = require('express-session');
+import models from '../models';
+import bodyParser from 'body-parser';
+import session from 'express-session';
+
 
 
 /* eslint-disable no-console */
@@ -52,6 +53,8 @@ app.use(session({
 app.use('/api/users', require('../apiRoutes/index').userRouter);
 app.use('/api/tweets', require('../apiRoutes/index').tweetRouter);
 app.use('/api/followers', require('../apiRoutes/index').followerRouter);
+app.use('/api/message', require('../apiRoutes/index').messageRouter);
+app.use('/api/login', require('../apiRoutes/index').loginRouter);
 
 
 app.get('/*', (req, res)=> {
