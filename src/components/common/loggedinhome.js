@@ -5,6 +5,8 @@ import Image from '../image/image';
 import Portrait from '../image/portrait';
 import $ from 'jquery';
 // import { Link } from 'react-router';
+import Header from './Header';
+import profilenav from './profilenav';
 
 const LoggedInHome = React.createClass({
   render() {
@@ -13,6 +15,8 @@ const LoggedInHome = React.createClass({
     });
     return(
       <div>
+		  <Header/>
+		<profilenav/>
         <div className="sectionNav">
   				<ul className="box-row nav nav-pills center">
   					<div className="containerTest1 test1">
@@ -64,6 +68,7 @@ const LoggedInHome = React.createClass({
   				</div>
   				</ul>
   			</div>
+		  {this.props.children}
       </div>
   );
   }

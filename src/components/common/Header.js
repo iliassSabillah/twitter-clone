@@ -94,7 +94,6 @@ const Header = (props)=> {
 				</div>
 				</ul>
 			</div>
-			{props.children}
 		</div>
 	);
 };

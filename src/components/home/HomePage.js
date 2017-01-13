@@ -67,7 +67,7 @@ const HomePage  = React.createClass({
 							<div className="col-md-4">
 
 								<button id="signup">SIGN UP</button>
-								<button id="login"><Link to={`/profile/${this.state.username}`}>Login</Link></button>
+								<button id="login"><Link to={`/profile`}>Login</Link></button>
 							</div>
 
 						</div>
