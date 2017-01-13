@@ -32,7 +32,6 @@ const Header = (props)=> {
 						</button>
 						{/* <a className="navbar-brand" href="#">Twitter</a> */}
 					</div>
-
 					<div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<ul className="nav navbar-nav">
 							<li><IndexLink to="/" activeClassName="active"><Glyphicon glyph="home" style={{fontSize: '1.25em'}} /><span>{' '}Home</span></IndexLink></li>
@@ -55,7 +54,6 @@ const Header = (props)=> {
 									<li className="smallPic bigPic" style={{marginTop: 10, marginRight: 5, marginLeft: 5 }}>
 										<Image />
 									</li>
-
 									<li>
 									{/* <li><button className="btn btn-outline-primary" href="#">Sign Up</button></li> */}
 									{/* <li><input className="btn btn-outline-primary" type="submit" value="Log In"/></li> */}
@@ -72,9 +70,6 @@ const Header = (props)=> {
 					</div>
 				</div>
 			</nav>
-
-			
-
 		</div>
 	);
 };
