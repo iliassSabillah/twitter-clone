@@ -11,8 +11,6 @@ models.Followers.sync({force: true})
 		{FollowedId: 2, FollowerId:  1},
 		{FollowedId: 4, FollowerId:  1},
 
-
-
 	]))
 	.catch((err) => console.log(err));
 

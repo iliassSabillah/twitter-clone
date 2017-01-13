@@ -55,7 +55,7 @@ const createMessage = ((req, res) => {
   	// .get(fetchMessage)
 
   messageRouter.route('/:id')
-  	.get(deleteMessage);
+  	.delete(deleteMessage);
 
 
   module.exports = messageRouter;

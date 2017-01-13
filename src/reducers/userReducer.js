@@ -11,7 +11,7 @@ export default function userReducer(state= INITIAL_STATE, action){
 		case types.CREATE_USER:
 			return Object.assign({},state, action.user);
 		case types.LOG_IN:
-			return state
+			return state;
 			// if (action.response.success) {
 			// 	return { ...state, user: action.response.user, error: null }
 			// } else {
@@ -20,8 +20,8 @@ export default function userReducer(state= INITIAL_STATE, action){
 		// case FETCH_USERS:
 		// 	const newUsers = _.mapKeys(action.user,'id');
 		// 	return	{...state, ...newUsers};
-		// case UPDATE_USER:
-		// 	return	{...state, [action.user.id]: action.user};
+		case types.UPDATE_USER:
+			return	Object.assign({},state, action.user);
 		// case DELETE_USER:
 		// 	return	_.omit(state, action.user.id);
 		default:

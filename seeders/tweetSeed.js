@@ -12,9 +12,9 @@ models.Tweet.sync({force: true})
 	//the following tweet should NOT be added to your database:
 
 	//(if your validations are setup correctly)
-	.then(() => models.Tweet.bulkCreate([
-		{tweet: ''}]
-		, {validate: true}))
+	// .then(() => models.Tweet.bulkCreate([
+	// 	{tweet: ''}]
+	// 	, {validate: true}))
 
 	// if everything is correct, you should only have THREE tweet in your database
 	.catch((err) => console.log(err));

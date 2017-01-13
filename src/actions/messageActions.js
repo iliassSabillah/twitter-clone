@@ -13,17 +13,17 @@ export function fetchMessage() {
 		});
 	};
 }
-
-export function deleteMessage() {
-	const request = axios.delete('/api/message/:id');
-
-	return (dispatch)=>{
-		request.then(({data})=>{
-			// console.log('message data',data);
-			dispatch({type: types.DELETE_MESSAGE, message: data});
-		});
-	};
-}
+//
+// export function deleteMessage() {
+// 	const request = axios.delete('/api/message/:id');
+//
+// 	return (dispatch)=>{
+// 		request.then(({data})=>{
+// 			// console.log('message data',data);
+// 			dispatch({type: types.DELETE_MESSAGE, message: data});
+// 		});
+// 	};
+// }
 
 export function createMessage() {
 	const request = axios.post('/api/message/');
