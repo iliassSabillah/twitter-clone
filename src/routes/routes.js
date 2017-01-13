@@ -15,11 +15,11 @@ import {onUsersEnter,onTweetsEnter, onFollowersEnter} from './route_data';
 export default (
 			<Route path="/" component={App}>
 				<IndexRoute  component={HomePage}/>
-				<Route path="profile" component={loggedinhome} onEnter={onUsersEnter}>
-					<IndexRoute component={UserContainer}  onEnter={onFollowersEnter}/>
-					<Route path="tweet" component={TweetContainer} onEnter={onTweetsEnter} />
+				<Route path="profile" component={loggedinhome} >
+					<IndexRoute component={UserContainer}  />
+					<Route path="tweet" component={TweetContainer}/>
 				</Route>
 				<Route path ="about" component={AboutPage}/>
 			</Route>
 );
-//
+//onEnter={onUsersEnter}onEnter={onFollowersEnter} onEnter={onTweetsEnter}

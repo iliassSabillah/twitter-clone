@@ -4,7 +4,7 @@ import axios from 'axios';
 
 
 export function fetchFollowers(){
-	const request = axios.get('/api/followers/1');
+	const request = axios.get('/api/followers');
 	return (dispatch)=>{
 		request.then(({data})=>{
 			console.log('follower data',data);
