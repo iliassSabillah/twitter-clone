@@ -7,7 +7,8 @@ import axios from "axios";
 const HomePage  = React.createClass({
 	getInitialState(){
 		return {
-			cnnData:{}
+			cnnData:{},
+			username:''
 		}
 	},
 	componentWillMount(){
@@ -41,6 +42,7 @@ const HomePage  = React.createClass({
 	},
 	render() {
 		console.log("home page state",this.state.cnnData);
+		console.log()
 		let list = !this.state.cnnData ? "<div>Loading...</div>" :this.state.cnnData.map(this.showArticles).filter((val,i,arr)=> i <= 8) ;
 		return (
 			<div className="container-fluid">
@@ -65,7 +67,7 @@ const HomePage  = React.createClass({
 							<div className="col-md-4">
 
 								<button id="signup">SIGN UP</button>
-								<button id="login"><a href="#" data-toggle="modal" data-target="#login-modal">Login</a></button>
+								<button id="login"><Link to={`/profile`}>Login</Link></button>
 							</div>
 
 						</div>

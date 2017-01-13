@@ -15,7 +15,7 @@ class UserContainer extends Component{
 	constructor(props, context){
 		super(props, context);
 		console.log('user container props',props);
-
+		console.log(props.follower);
 		this.handleFollow = this.handleFollow.bind(this);
 	}
 	// handleInput(e,inputField){
@@ -28,12 +28,12 @@ class UserContainer extends Component{
 		// let userId = 1;
 		let follower = {followerId : e.target.value};
 		let followers = Object.assign({}, this.props.user, follower);
-		this.props.actions.createFollower(followers);
+		this.props.actions.fetchFollowers(followers);
 	}
 	render(){
 		// console.log('state inside user container:',this.props.user.followers);
 		return (
-				<User follow={this.handleFollow} user={this.props} handleSubmit={this.handleSubmit} userRow={this.userRow}/>
+				<User follow={this.handleFollow} user={this.props.user} followers={this.props.follower} handleSubmit={this.handleSubmit} userRow={this.userRow}/>
 		);
 	}
 }
@@ -42,7 +42,8 @@ UserContainer.propTypes = {
 	actions : PropTypes.object.isRequired,
 	user: PropTypes.object,
 	fetchUser: PropTypes.func,
-	createFollower: PropTypes.func
+	fetchFollowers: PropTypes.func,
+	follower: PropTypes.object
 };
 
 const mapStateToProps= (state,ownProps)=>({user: state.user});

@@ -1,5 +1,6 @@
 //This component handles the App component
 import React, {PropTypes} from 'react';
+
 import Header from './common/Header';
 import ProfileNav from './common/profilenav';
 import ProfileBanner from './common/profileBanner';
@@ -10,12 +11,9 @@ import $ from 'jquery';
 
 class App extends React.Component{
 	render(){
+		{/* <LogIn /> {/*This is just here to get funtionality working. Will be integrated into our Twitter Home Page*/}
 		return (
 			<div className ="container-fluid">
-				<Header/>
-				{/* <LoggedInHome /> */}
-				<ProfileNav />
-				{/* <LogIn /> {/*This is just here to get funtionality working. Will be integrated into our Twitter Home Page*/}
 
 				{this.props.children}
 			</div>

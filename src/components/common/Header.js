@@ -50,9 +50,12 @@ const Header = (props)=> {
 								</div> */}
 								<ul className="nav navbar-nav navbar-right">
 									<li className="smallPic bigPic" style={{marginTop: 10, marginRight: 5, marginLeft: 5 }}>
-										<Image />
+										<Link to="profile">
+                      <Image />
+                    </Link>
 									</li>
 									<li>
+                    <Link to="profile/tweet">
 									{/* <li><button className="btn btn-outline-primary" href="#">Sign Up</button></li> */}
 									{/* <li><input className="btn btn-outline-primary" type="submit" value="Log In"/></li> */}
 									{/* <img src={'./profile.png'} /> */}
@@ -60,6 +63,7 @@ const Header = (props)=> {
 											<Glyphicon glyph="leaf" />
 											{' '}Tweet
 										</button>
+                    </Link>
 									</li>
 								</ul>
 							</div>
@@ -68,7 +72,7 @@ const Header = (props)=> {
 					</div>
 				</div>
 			</nav>
-			{props.children}
+    {props.children}
 		</div>
 	);
 };
