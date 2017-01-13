@@ -35,7 +35,8 @@ tweetRouter.route('/')
 	.post(postTweet);
 
 tweetRouter.route('/:id')
-	.get(getTweet);
+	.get(getTweet)
+	.delete(deleteTweet);
 
 
 module.exports = tweetRouter;

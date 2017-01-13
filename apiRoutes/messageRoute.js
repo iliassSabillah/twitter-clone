@@ -2,20 +2,29 @@ const express = require('express');
 const messageRouter  = express.Router();
 const models = require('../models');
 
-const fetchMessage = ((req, res) => {
-		Message.findAll({
-			text: req.body.text
-		})
+// const fetchMessage = ((req, res) => {
+// 		models.Message.findAll({
+// 			text: req.body.text
+// 		})
+// 		.then((data) => {
+// 			res.json(data)
+// 		})
+// 		.catch((err) => {
+// 			console.log(err)
+// 		})
+// 	});
+const getMessages = ((req, res)=> {
+	models.Message.findAll({})
 		.then((data) => {
-			res.json(data)
-		})
+		res.json(data)
+	})
 		.catch((err) => {
 			console.log(err)
 		})
-	});
+})
 
 const createMessage = ((req, res) => {
-		Message.findOrCreate({
+		models.Message.findOrCreate({
 			text: req.body.text
 		})
 		.then((data) => {
@@ -27,12 +36,12 @@ const createMessage = ((req, res) => {
 	});
 
   const deleteMessage = ((req, res) => {
-  		Message.findById(req.params.id)
-  		.then(function(data) {
+  		models.Message.findById(req.params.id)
+  		.then((data)=> {
   			data.destroy()
   		})
   		.then((data) => {
-  			console.log('Deleted!')
+  			console.log('Deleted!');
   			res.send(data)
   		})
   		.catch((err) => {
@@ -41,8 +50,9 @@ const createMessage = ((req, res) => {
   	})
 
   messageRouter.route('/')
-  	.get(fetchMessage)
-  	.post(createMessage);
+	.get(getMessages)
+	.post(createMessage);
+  	// .get(fetchMessage)
 
   messageRouter.route('/:id')
   	.get(deleteMessage);

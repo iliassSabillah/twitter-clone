@@ -24,7 +24,7 @@ const getUserFollowers = (req,res)=>{
 };
 
 const getUsers = (req,res)=>{
-	models.User.findAll({include:[{model: models.Tweet},{model:models.Message}]})
+	models.User.findAll({include:[{model: models.Tweet},{model:models.Message},{model:models.Followers}]})
 		.then(users=>{res.send(users)});
 };
 

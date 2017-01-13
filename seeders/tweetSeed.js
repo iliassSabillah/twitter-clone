@@ -8,7 +8,7 @@ models.Tweet.sync({force: true})
 	.then(() => models.Tweet.bulkCreate([
 			{tweet: 'bla bla',UserId: 1},
 			{tweet: 'bla bla bla',UserId: 1}
-					]))
+		]))
 	//the following tweet should NOT be added to your database:
 
 	//(if your validations are setup correctly)
