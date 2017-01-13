@@ -9,20 +9,6 @@ import $ from 'jquery';
 
 
 class App extends React.Component{
-	// submitLoginInfo(e){
-	// 	e.preventDefault();
-	// 	try {
-	// 	$.ajax({
-	// 		url: '/signin',
-	// 		method: 'POST',
-	// 		data: this.state
-	// 	}).done(data=>{console.log('received user data',data)})
-	// 	}catch (e) {
-	// 		console.log(e.message);
-	// 	}
-	// 	return false;
-    //
-	// }
 	render(){
 		return (
 			<div className ="container-fluid">
@@ -30,6 +16,7 @@ class App extends React.Component{
 				{/* <LoggedInHome /> */}
 				<ProfileNav />
 				{/* <LogIn /> {/*This is just here to get funtionality working. Will be integrated into our Twitter Home Page*/}
+
 				{this.props.children}
 			</div>
 		);
@@ -39,5 +26,6 @@ class App extends React.Component{
 App.propTypes = {
 	children : PropTypes.object.isRequired
 };
+
 
 export default App;

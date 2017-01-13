@@ -10,3 +10,5 @@ export const LOG_IN = 'LOG_IN';
 export const AUTH_SET_TOKEN = 'AUTH_SET_TOKEN';
 export const AUTH_LOG_OUT = 'AUTH_LOG_OUT';
 export const AUTH_LOG_IN = 'AUTH_LOG_IN'
+export const CREATE_FOLLOWER = 'CREATE_FOLLOWER';
+export const FETCH_FOLLOWER = 'FETCH_FOLLOWER';

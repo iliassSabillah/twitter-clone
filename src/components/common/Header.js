@@ -1,5 +1,3 @@
-
-
 //This component handles the header navbar component
 import React ,{PropTypes} from 'react';
 import {Link, IndexLink} from 'react-router';
@@ -70,6 +68,7 @@ const Header = (props)=> {
 					</div>
 				</div>
 			</nav>
+			{props.children}
 		</div>
 	);
 };
