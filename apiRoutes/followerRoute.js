@@ -6,13 +6,13 @@ const models = require('../models');
 
 // GET follower by id
 const getFollower = (req,res)=>{
-	models.Followers.findOne({where:{followedId:req.params.id}})
+	models.Followers.findById(req.params.id)
 		.then(user => {res.send(user)});
 };
 
 // GET all followers
 const getFollowers = (req,res)=>{
-	models.Followers.findAll({where:{followedId :req.params.id}})
+	models.Followers.findAll({})
 		.then(users=>{
 			console.log(users);
 			res.send(users)

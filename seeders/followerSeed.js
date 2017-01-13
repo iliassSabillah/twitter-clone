@@ -8,7 +8,6 @@ models.Followers.sync({force: true})
 	.then(() => models.Followers.bulkCreate([
 		{FollowedId: 1, FollowerId:  2},
 		{FollowedId: 1, FollowerId:  4},
-		{FollowedId: 1, FollowerId:  3},
 		{FollowedId: 2, FollowerId:  1},
 		{FollowedId: 4, FollowerId:  1},
 
