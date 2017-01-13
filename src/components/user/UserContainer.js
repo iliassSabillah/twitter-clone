@@ -18,12 +18,28 @@ class UserContainer extends Component{
 		console.log(props.follower);
 		this.handleFollow = this.handleFollow.bind(this);
 	}
-	// handleInput(e,inputField){
-	// 	// const user = this.state.user;
-	// 	user[inputField] = e.target.value;
-	// 	this.userRow();
-	// 	this.props.actions.createUser(user);
-	// }
+	handleChange(e,inputField) {
+		const user = this.props.user;
+		user[inputField] = e.target.value;
+
+		this.props.actions.updateUser(user);
+
+	}
+	handleSubmit(e) {
+		e.preventDefault();
+		let username;
+		// this.refs.username ? username = this.refs.username.value : username;
+		// console.log('username',username)
+		// let bio = this.refs.bio;
+		// let location = this.refs.location;
+		// let birthday = this.refs.birthday;
+		// let website = this.refs.website;
+		// let userInfo = {username,bio, location,birthday, website };
+		// console.log(userInfo);
+		console.log('bio value',e);
+		// this.props.actions.updateUser(userInfo);
+
+	}
 	handleFollow(e) {
 		// let userId = 1;
 		let follower = {followerId : e.target.value};
@@ -31,19 +47,19 @@ class UserContainer extends Component{
 		this.props.actions.fetchFollowers(followers);
 	}
 	render(){
-		// console.log('state inside user container:',this.props.user.followers);
 		return (
-				<User follow={this.handleFollow} user={this.props.user} followers={this.props.follower} handleSubmit={this.handleSubmit} userRow={this.userRow}/>
+				<User follow={this.handleFollow} user={this.props.user} handleChange={this.handleChange} handleSubmit={this.handleSubmit} userRow={this.userRow}/>
 		);
 	}
 }
 
 UserContainer.propTypes = {
 	actions : PropTypes.object.isRequired,
-	user: PropTypes.object,
+	user: PropTypes.array,
 	fetchUser: PropTypes.func,
 	fetchFollowers: PropTypes.func,
-	follower: PropTypes.object
+	follower: PropTypes.object,
+	updateUser: PropTypes.func
 };
 
 const mapStateToProps= (state,ownProps)=>({user: state.user});
@@ -53,15 +69,4 @@ const mapDispatchToProps=(dispatch)=>({
 	});
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserContainer);
-// this.state = {
-// 	user: {
-// 		id: '',
-// 		username: '',
-// 		email: '',
-// 		password:'',
-// 		followers: {
-// 			followedId : 1,
-// 			followerId : ''
-// 		}
-// 	}
-// };
+

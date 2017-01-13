@@ -19,15 +19,16 @@ export function fetchUser(props) {
 	};
 }
 
-// export function postUser() {
-// 	const request = axios.put('/api/users/1');
-//
-// 	return (dispatch)=>{
-// 		request.then(({data})=>{
-// 			dispatch({type: types.UPDATE_USER, user: data});
-// 		});
-// 	};
-// }
+export function updateUser(props) {
+	console.log(props)
+	const request = axios.put('/api/users/1');
+
+	return (dispatch)=>{
+		request.then(({data})=>{
+			dispatch({type: types.UPDATE_USER, user: data});
+		});
+	};
+}
 
 
 

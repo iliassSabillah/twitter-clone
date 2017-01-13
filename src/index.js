@@ -6,8 +6,8 @@ import {Provider} from 'react-redux';
 import { syncHistoryWithStore } from 'react-router-redux';
 import routes from './routes/routes';
 import configureStore from './store/configureStore';
-import './styles/styles.css'; //Webpack can import CSS files too
 import 'jquery';
+import './styles/styles.css'; //Webpack can import CSS files too
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import {fetchUser} from './actions/userActions';
 import {fetchTweet} from './actions/tweetActions';
@@ -31,7 +31,7 @@ render (
 );
 
 //
-store.dispatch(fetchUser());
+store.dispatch(fetchUser(store.getState().routing.params));
 store.dispatch(fetchTweet());
 store.dispatch(fetchFollowers());
 

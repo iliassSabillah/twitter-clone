@@ -5,37 +5,37 @@ const models = require('../models');
 
 
 // GET follower by id
-const getFollower = (req,res)=>{
-	models.Followers.findById(req.params.id)
-		.then(user => {res.send(user)});
-};
+// const getFollower = (req,res)=>{
+// 	models.Followers.findById(req.params.id)
+// 		.then(user => {res.send(user)});
+// };
 
 // GET all followers
 const getFollowers = (req,res)=>{
 	models.Followers.findAll({})
-		.then(users=>{
-			console.log(users);
-			res.send(users)
-		})
+		.then(users=> {
+				res.send(users);
+			}
+		)
 };
 
 // POST (create) a new follower
-const createFollower = (req,res)=>{
-	models.Followers.create({
-		followedId: 1,
-		followerId: req.body.followerId
-
-	}).then(newFollower=> {
-		res.send(newFollower)})
-};
+// const createFollower = (req,res)=>{
+// 	models.Followers.create({
+// 		followedId: 1,
+// 		followerId: req.body.followerId
+//
+// 	}).then(newFollower=> {
+// 		res.send(newFollower)})
+// };
 
 
 followerRouter.route('/')
-	.post(createFollower)
+	// .post(createFollower)
 	.get(getFollowers);
 
-followerRouter.route('/:id')
-	.get(getFollower);
+// followerRouter.route('/:id')
+// 	.get(getFollower);
 
 
 module.exports = followerRouter;

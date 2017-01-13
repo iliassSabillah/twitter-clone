@@ -7,13 +7,15 @@ module.exports = (sequelize, DataTypes)=> {
 				validate: {notNull:true}
 			}
 		}
-		,{
-			classMethods: {
-				associate: (models)=> {
-					Tweet.belongsTo(models.User)
-				}
-			}
-		}
+		// ,{
+		// 	classMethods: {
+		// 		associate: (models)=> {
+		// 			Tweet.belongsTo(models.User, {
+		// 				foreignKey: "UserId", as : "tweets"
+		// 			})
+		// 		}
+		// 	}
+		// }
 	);
 
 	return Tweet;

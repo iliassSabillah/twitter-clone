@@ -8,7 +8,7 @@ const LogIn = React.createClass({
 		return {username: null, password: null}
 	},
 	onFormSubmit: function (event) {
-		event.preventDefault()
+		event.preventDefault();
 
 		$.ajax({
 			url: '/api/login',
@@ -16,7 +16,7 @@ const LogIn = React.createClass({
 			data: this.state
 		})
 		.done((response) => {
-			console.log('response:', response)
+			console.log('response:', response);
 			if (typeof response === "string"){
 				alert(response)
 			}
@@ -40,7 +40,7 @@ const LogIn = React.createClass({
 		</div>
 		)
 	}
-})
+});
 
 
 module.exports = LogIn;

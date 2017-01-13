@@ -1,4 +1,4 @@
-const bcrypt = require('bcryptjs');
+// const bcrypt = require('bcryptjs');
 "use strict";
 
 module.exports = (sequelize, DataTypes)=> {
@@ -67,11 +67,11 @@ module.exports = (sequelize, DataTypes)=> {
 			},
 
 	},
-		{
-		hooks: {
-			afterValidate : user => user.password = bcrypt.hashSync(user.password,8)
-		}
-	},
+	// 	{
+	// 	hooks: {
+	// 		afterValidate : user => user.password = bcrypt.hashSync(user.password,8)
+	// 	}
+	// },
 		{
 		classMethods: {
 			associate: (models)=> {

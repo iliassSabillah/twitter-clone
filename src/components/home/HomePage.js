@@ -11,7 +11,7 @@ const HomePage  = React.createClass({
 			username:''
 		}
 	},
-	componentWillMount(){
+	componentDidMount(){
 		let that = this;
 		axios.get("https://newsapi.org/v1/articles?source=cnn&sortBy=top&apiKey=5dcc087c73fb4052a41f6688d7619d79")
 			.then(data=> that.setState({cnnData: data.data.articles}))
@@ -42,7 +42,6 @@ const HomePage  = React.createClass({
 	},
 	render() {
 		console.log("home page state",this.state.cnnData);
-		console.log()
 		let list = !this.state.cnnData ? "<div>Loading...</div>" :this.state.cnnData.map(this.showArticles).filter((val,i,arr)=> i <= 8) ;
 		return (
 			<div className="container-fluid">

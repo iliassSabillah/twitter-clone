@@ -1,4 +1,4 @@
-import React from 'react';
+import React ,{PropTypes}from 'react';
 import {Link, IndexLink} from 'react-router';
 import {Glyphicon} from 'react-bootstrap';
 import Image from '../image/image';
@@ -13,6 +13,7 @@ const LoggedInHome = React.createClass({
     $('textarea.tweetInput').focus(function () {
       $(this).animate({ height: "4em" }, 500);
     });
+    console.log('loggedin home state',this.props);
     return(
       <div>
 		  <Header/>
@@ -73,5 +74,9 @@ const LoggedInHome = React.createClass({
   );
   }
 });
+
+LoggedInHome.propTypes = {
+	children: PropTypes.object
+};
 
 export default LoggedInHome;
